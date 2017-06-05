@@ -2,6 +2,7 @@
   <div>
     <div class="container">
       <div class="page-header">
+        <button class="pull-right btn btn-success" @click="fullscreen()"><i class="glyphicon glyphicon-fullscreen"></i> 全 屏</button>
         <h4><router-link to="/instances"><i class="glyphicon glyphicon-arrow-left"></i></router-link> {{instance.cloudware.name}}</h4>
       </div>
       <div id="screen"></div>
@@ -15,95 +16,118 @@
       return {
         instance: {
           cloudware: {}
+        },
+        isFullscreen: false,
+        canvas: null
+      }
+    },
+    methods: {
+      fullscreen() {
+        var docElm = document.documentElement;
+        if (docElm.requestFullscreen) {
+          this.canvas.requestFullscreen();
+        } else if (docElm.webkitRequestFullScreen) {
+          this.canvas.webkitRequestFullScreen();
         }
+        this.isFullscreen = true;
       }
     },
     created() {
+      var canvas = document.createElement('canvas');
+      canvas.width = 1440;
+      canvas.height = 900;
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      this.canvas = canvas
+      var that = this;
       this.$http.get('instances/' + this.$route.params.id).then(resp => {
         this.instance = resp.body
         var instance = this.instance
-        var canvas = document.createElement('canvas');
-        canvas.width = 1440;
-        canvas.height = 900;
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        var ws = new WebSocket(this.instance.ws);
-        ws.onopen = function() {
-          document.getElementById('screen').appendChild(canvas);
-          canvas.onmousemove = function (e) {
-            var dom_left = canvas.offsetLeft;
-            var dom_top = canvas.offsetTop;
-            var scroll_top = document.getElementById('screen').scrollTop;
-            if (instance.isFullscreen) {
-              scroll_top = 0;
-            }
-            var bei = canvas.offsetWidth / 1440;
-            var x = Math.floor((e.pageX - dom_left) / bei);
-            var y = Math.floor((e.pageY - dom_top + scroll_top) / bei);
-            var buf = new ArrayBuffer(5);
-            var dv = new DataView(buf);
-            dv.setUint8(0, 0);
-            dv.setUint16(1, x, true);
-            dv.setUint16(3, y, true);
-            if (ws.readyState == 1)
-              ws.send(buf);
+        function connect() {
+          var ws = new WebSocket(instance.ws);
+          ws.onerror = function() {
+            setTimeout(function() {
+              connect()
+            }, 1000)
+          }
+          ws.onopen = function() {
+            document.getElementById('screen').appendChild(canvas);
+            canvas.onmousemove = function (e) {
+              var dom_left = canvas.offsetLeft;
+              var dom_top = canvas.offsetTop;
+              var scroll_top = document.getElementById('screen').scrollTop;
+              if (that.isFullscreen) {
+                scroll_top = 0;
+              }
+              var bei = canvas.offsetWidth / 1440;
+              var x = Math.floor((e.pageX - dom_left) / bei);
+              var y = Math.floor((e.pageY - dom_top + scroll_top) / bei);
+              var buf = new ArrayBuffer(5);
+              var dv = new DataView(buf);
+              dv.setUint8(0, 0);
+              dv.setUint16(1, x, true);
+              dv.setUint16(3, y, true);
+              if (ws.readyState == 1)
+                ws.send(buf);
+            };
+            canvas.onmousedown = function (e) {
+              var buf = new ArrayBuffer(5);
+              var dv = new DataView(buf);
+              dv.setUint8(0, 1);
+              dv.setUint32(1, e.which, true);
+              if (ws.readyState == 1)
+                ws.send(buf);
+            };
+            canvas.onmouseup = function (e) {
+              var buf = new ArrayBuffer(5);
+              var dv = new DataView(buf);
+              dv.setUint8(0, 2);
+              dv.setUint32(1, e.which, true);
+              if (ws.readyState == 1)
+                ws.send(buf);
+            };
+            document.onkeydown = function (e) {
+              if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
+                e.preventDefault(); // stops its action
+              }
+              var buf = new ArrayBuffer(5);
+              var dv = new DataView(buf);
+              dv.setUint8(0, 3);
+              dv.setUint32(1, mapKey(e.which), true);
+              if (ws.readyState == 1)
+                ws.send(buf);
+            };
+            document.onkeyup = function (e) {
+              if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
+                e.preventDefault(); // stops its action
+              }
+              var buf = new ArrayBuffer(5);
+              var dv = new DataView(buf);
+              dv.setUint8(0, 4);
+              dv.setUint32(1, mapKey(e.which), true);
+              if (ws.readyState == 1)
+                ws.send(buf);
+            };
           };
-          canvas.onmousedown = function (e) {
-            var buf = new ArrayBuffer(5);
-            var dv = new DataView(buf);
-            dv.setUint8(0, 1);
-            dv.setUint32(1, e.which, true);
-            if (ws.readyState == 1)
-              ws.send(buf);
+          ws.binaryType = "arraybuffer";
+          ws.onmessage = function(msg) {
+            var data = msg.data;
+            var dv = new DataView(data);
+            var x = dv.getInt32(0, true);
+            var y = dv.getInt32(4, true);
+            var d = data.slice(8);
+            var blob = new Blob([d], {type: 'image/webp'});
+            var url = URL.createObjectURL(blob);
+            var img = new Image;
+            img.onload = function () {
+              var ctx = canvas.getContext('2d');
+              ctx.drawImage(img, x, y);
+              URL.revokeObjectURL(url);
+            };
+            img.src = url;
           };
-          canvas.onmouseup = function (e) {
-            var buf = new ArrayBuffer(5);
-            var dv = new DataView(buf);
-            dv.setUint8(0, 2);
-            dv.setUint32(1, e.which, true);
-            if (ws.readyState == 1)
-              ws.send(buf);
-          };
-          document.onkeydown = function (e) {
-            if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
-              e.preventDefault(); // stops its action
-            }
-            var buf = new ArrayBuffer(5);
-            var dv = new DataView(buf);
-            dv.setUint8(0, 3);
-            dv.setUint32(1, mapKey(e.which), true);
-            if (ws.readyState == 1)
-              ws.send(buf);
-          };
-          document.onkeyup = function (e) {
-            if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
-              e.preventDefault(); // stops its action
-            }
-            var buf = new ArrayBuffer(5);
-            var dv = new DataView(buf);
-            dv.setUint8(0, 4);
-            dv.setUint32(1, mapKey(e.which), true);
-            if (ws.readyState == 1)
-              ws.send(buf);
-          };
-        };
-        ws.binaryType = "arraybuffer";
-        ws.onmessage = function(msg) {
-          var data = msg.data;
-          var dv = new DataView(data);
-          var x = dv.getInt32(0, true);
-          var y = dv.getInt32(4, true);
-          var d = data.slice(8);
-          var blob = new Blob([d], {type: 'image/webp'});
-          var url = URL.createObjectURL(blob);
-          var img = new Image;
-          img.onload = function () {
-            var ctx = canvas.getContext('2d');
-            ctx.drawImage(img, x, y);
-            URL.revokeObjectURL(url);
-          };
-          img.src = url;
-        };
+        }
+        connect();
       })
     }
   }
