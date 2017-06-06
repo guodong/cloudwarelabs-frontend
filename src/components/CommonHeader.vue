@@ -20,7 +20,7 @@
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download" aria-expanded="false">{{user.username}} <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="download">
-                <li><a href="#">个人信息</a></li>
+                <li><a href="#" @click="userInfo()">个人信息</a></li>
                 <li class="divider"></li>
                 <li><a href="#" @click="logout()">退出</a></li>
               </ul>
@@ -50,6 +50,9 @@
       logout() {
         localStorage.removeItem('token')
         this.$router.push('/')
+      },
+      userInfo() {
+        this.$router.push('/userinfo')
       }
     }
   }

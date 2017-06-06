@@ -7,6 +7,7 @@ import Instance from '@/components/instances/instance/Index.vue'
 import Welcome from '@/components/Welcome.vue'
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
+import UserInfoEdit from '@/components/UserInfoEdit.vue'
 
 Vue.use(Router)
 
@@ -36,5 +37,8 @@ export default new Router({
   }, {
     path: '/register',
     component: Register
+  }, {
+    path: '/userinfo',
+    component: UserInfoEdit
   }]
 })

@@ -36,8 +36,8 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                  <li @click="login"><a>登录</a></li>
-                  <li @click="register"><a>注册</a></li>
+                  <li @click="login" style="cursor: pointer"><a>登录</a></li>
+                  <li @click="register" style="cursor: pointer"><a>注册</a></li>
                 </ul>
 
               </div>
@@ -146,33 +146,10 @@
       </div>
     </div>
 
-    <!--<div class="container contain_all">-->
-    <!--<div class="row">-->
-    <!--<header class="col-sm-12 col-md-12 col-lg-12 head">-->
-
-    <!--</header>-->
-    <!--<section class="col-sm-12 col-md-12 col-lg-12 main_page">-->
-    <!--<p>sd</p>-->
-    <!--</section>-->
-    <!--<section class="col-sm-12 col-md-12 col-lg-12">-->
-    <!--<p>sd</p>-->
-    <!--</section>-->
-    <!--<section class="col-sm-12 col-md-12 col-lg-12">-->
-    <!--<p>sd</p>-->
-    <!--</section>-->
-    <!--<footer class="col-sm-12 col-md-12 col-lg-12">-->
-    <!--<p>sd</p>-->
-    <!--</footer>-->
-    <!--</div>-->
-
-    <!--</div>-->
-
   </div>
 
 </template>
 <script>
-
-
   import router from '../router'
   export default{
     name: 'welcome',
