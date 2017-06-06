@@ -3,7 +3,7 @@
     <div class="container">
       <div class="page-header">
         <button class="pull-right btn btn-success" @click="fullscreen()"><i class="glyphicon glyphicon-fullscreen"></i> 全 屏</button>
-        <h4><router-link to="/instances"><i class="glyphicon glyphicon-arrow-left"></i></router-link> {{instance.cloudware.name}}</h4>
+        <h4><a href="#" @click="back()"><i class="glyphicon glyphicon-arrow-left"></i></a> {{instance.cloudware.name}}</h4>
       </div>
       <div id="screen"></div>
     </div>
@@ -18,7 +18,8 @@
           cloudware: {}
         },
         isFullscreen: false,
-        canvas: null
+        canvas: null,
+        ws: null
       }
     },
     methods: {
@@ -30,9 +31,18 @@
           this.canvas.webkitRequestFullScreen();
         }
         this.isFullscreen = true;
+      },
+      back() {
+        if (this.ws) {
+          this.ws.close()
+        }
+        this.$router.push('/instances')
       }
     },
     created() {
+      document.oncontextmenu = function() {
+        return false;
+      }
       var canvas = document.createElement('canvas');
       canvas.width = 1440;
       canvas.height = 900;
@@ -45,6 +55,7 @@
         var instance = this.instance
         function connect() {
           var ws = new WebSocket(instance.ws);
+          that.ws = ws
           ws.onerror = function() {
             setTimeout(function() {
               connect()
