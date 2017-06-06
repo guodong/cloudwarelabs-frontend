@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="particles-js"></div>
+  <div class="ht100">
+    <div id="particles-js" class="ht100"></div>
     <div class="loginpanel">
       <h1>Cloudware Lab</h1>
       <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
@@ -197,7 +197,11 @@
 
   }
 </script>
-<style scope>
+<style scoped>
+  .ht100 {
+    height: 100%;
+  }
+
   canvas {
     display: block;
     vertical-align: bottom;

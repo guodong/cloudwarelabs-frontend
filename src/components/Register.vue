@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <div id="particles-js"></div>
     <div class="registerpanel">
       <h1>Cloudware Lab</h1>

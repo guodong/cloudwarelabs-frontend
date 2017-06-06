@@ -1,14 +1,13 @@
 <template>
   <div>
-
-
     <div id="fullpage">
       <div class="section active" id="section0">
         <div id="top-menu">
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -19,25 +18,26 @@
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">云件服务 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="">云件服务 <span class="sr-only">(current)</span></a></li>
                   <li><a href="#">使用帮助</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">One more separated link</a></li>
-                    </ul>
-                  </li>
+                  <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-->
+                      <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                      <!--<li><a href="#">Action</a></li>-->
+                      <!--<li><a href="#">Another action</a></li>-->
+                      <!--<li><a href="#">Something else here</a></li>-->
+                      <!--<li class="divider"></li>-->
+                      <!--<li><a href="#">Separated link</a></li>-->
+                      <!--<li class="divider"></li>-->
+                      <!--<li><a href="#">One more separated link</a></li>-->
+                    <!--</ul>-->
+                  <!--</li>-->
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                  <li @click="login"><a >登录</a></li>
-                  <li @click="register"><a >注册</a></li>
+                  <li @click="login"><a>登录</a></li>
+                  <li @click="register"><a>注册</a></li>
                 </ul>
 
               </div>
@@ -48,11 +48,11 @@
           <h2 style="color: white">Cloudware Lab</h2>
           <h1 style="color: white">让软件更易使用</h1>
           <ul class="service" style="list-style: none;display: inline-block;padding: 0px">
-            <li >
+            <li>
               <i class="fa fa-search" aria-hidden="true"></i>
               <p>即搜即用</p>
             </li>
-            <li >
+            <li>
               <i class="fa fa-rocket" aria-hidden="true"></i>
               <P>秒级启动</P>
             </li>
@@ -65,14 +65,6 @@
       </div>
 
       <div class="section" id="section1">
-        <!--<div class="sectionArrange">-->
-          <!--<section class="half">-->
-
-          <!--</section>-->
-          <!--<section class="half">-->
-            <!--<h2 >即搜即用，秒级启动</h2>-->
-          <!--</section>-->
-        <!--</div>-->
         <div class="container" style="padding-top: 120px">
           <h1>为你提供所需的一切</h1>
           <div class="row" style="margin-top: 50px">
@@ -154,49 +146,72 @@
       </div>
     </div>
 
+    <!--<div class="container contain_all">-->
+    <!--<div class="row">-->
+    <!--<header class="col-sm-12 col-md-12 col-lg-12 head">-->
+
+    <!--</header>-->
+    <!--<section class="col-sm-12 col-md-12 col-lg-12 main_page">-->
+    <!--<p>sd</p>-->
+    <!--</section>-->
+    <!--<section class="col-sm-12 col-md-12 col-lg-12">-->
+    <!--<p>sd</p>-->
+    <!--</section>-->
+    <!--<section class="col-sm-12 col-md-12 col-lg-12">-->
+    <!--<p>sd</p>-->
+    <!--</section>-->
+    <!--<footer class="col-sm-12 col-md-12 col-lg-12">-->
+    <!--<p>sd</p>-->
+    <!--</footer>-->
+    <!--</div>-->
+
+    <!--</div>-->
 
   </div>
 
 </template>
 <script>
-  $(document).ready(function() {
-    $('#fullpage').fullpage({
-      verticalCentered: false
-    });
-  });
+
 
   import router from '../router'
   export default{
-    name:'welcome',
-//    data(){
-//      return{
-//
-//      }
-//    }
-    methods:{
-      login:function () {
+    name: 'welcome',
+    methods: {
+      login: function () {
+        $('#fullpage').fullpage.destroy('all')
         router.push('/login')
       },
-      register:function () {
+      register: function () {
+        $('#fullpage').fullpage.destroy('all')
         router.push('/register')
       }
+    },
+    created() {
+      $(document).ready(function() {
+        $('#fullpage').fullpage({
+          verticalCentered: false
+        });
+      });
     }
   }
 </script>
-<style scope>
-  *{
+<style scoped>
+
+  * {
     box-sizing: border-box;
   }
-  .f-header{
+
+  .f-header {
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
     height: 99px;
-    border-bottom: 1px solid rgba(225,225,225,.3);
+    border-bottom: 1px solid rgba(225, 225, 225, .3);
     line-height: 100px;
     position: fixed;
   }
+
   #top-menu {
     position: fixed;
     height: 64px;
@@ -205,32 +220,42 @@
     background-color: #FFF;
     z-index: 100;
   }
-  .menu{
+
+  .menu {
     float: right;
     height: 100%;
   }
-  .section{
-    text-align:center;
+
+  .section {
+    text-align: center;
     background-size: cover;
   }
-  #section0{
+
+  #section0 {
     background-image: url(../assets/welcome/background.jpg);
   }
-  #section2{
+
+  #section2 {
     text-align: left;
     background-color: #f2f2f2;
   }
-  #section3{
+
+  #section3 {
     background-image: url(../assets/welcome/section3.jpg);
   }
-  .content{
+
+  .content {
     height: 50%;
     margin: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     color: white;
   }
-  ul.service li{
+
+  ul.service li {
     list-style: none;
     padding: 0 40px;
     margin: 30px 0;
@@ -238,14 +263,16 @@
     border-right: 1px dotted #BBB;
   }
 
-  .block img{
+  .block img {
     width: 50%;
     height: 50%;
   }
-  .block p{
+
+  .block p {
     font-size: 16px;
   }
-  .contact{
+
+  .contact {
 
     display: block;
     margin-right: 20px;
@@ -254,13 +281,15 @@
     right: 30px;
     color: white;
   }
-  .sectionArrange{
+
+  .sectionArrange {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
 
   }
-  .half{
+
+  .half {
     padding-left: 50px;
     padding-right: 20px;
     position: relative;
