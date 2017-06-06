@@ -18,11 +18,11 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download" aria-expanded="false">admin <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download" aria-expanded="false">{{user.username}} <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="download">
                 <li><a href="#">个人信息</a></li>
                 <li class="divider"></li>
-                <li><a href="./bootstrap.min.css">退出</a></li>
+                <li><a href="#" @click="logout()">退出</a></li>
               </ul>
             </li>
           </ul>
@@ -38,11 +38,19 @@
     name: 'common-header',
     data () {
       return {
-
+        user: {}
       }
     },
     created() {
-
+      this.$http.get('users/current').then(resp => {
+        this.user = resp.body
+      })
+    },
+    methods: {
+      logout() {
+        localStorage.removeItem('token')
+        this.$router.push('/')
+      }
     }
   }
 </script>
