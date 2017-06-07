@@ -2,55 +2,57 @@
   <div>
     <commonheader></commonheader>
 
-    <div class="container info">
-      <div class="row">
-        <div class="col-md-3 col-sm-3 col-md-offset-2">
-          <div class="list-group">
-            <p style="font-size: 24px;margin-bottom: 5px"><b>账号</b></p>
-            <button type="button" class="list-group-item" @click="showInfo">个人信息</button>
-            <button type="button" class="list-group-item" @click="showPassword">更改密码</button>
+    <div class="jumbotron" style="max-height: 550px;width: 80%;margin: 0 auto;border-radius: 3%">
+      <div class="container info">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-md-offset-2">
+            <div class="list-group">
+              <p style="font-size: 24px;margin-bottom: 5px"><b>账号</b></p>
+              <button type="button" class="list-group-item" v-bind:class="{active:control.isActive}" @click="showInfo">个人信息</button>
+              <button type="button" class="list-group-item" v-bind:class="{active:!control.isActive}" @click="showPassword">更改密码</button>
+            </div>
           </div>
-        </div>
-        <div class="col-md-5 col-sm-5 panel" v-show="control.showInfo">
-          <form class="form-horizontal">
-            <fieldset>
-              <legend style="padding-top: 30px; width: 500px;margin: 0 auto;border-bottom: 0px">个人信息</legend>
-              <div class="form-group " style=" width:400px; margin: 20px auto">
-                <input type="text" class="form-control" v-model="user.username">
-              </div>
-              <div class="form-group" style=" width:400px; margin: 20px auto">
-                <input type="text" class="form-control" v-model="user.id">
-              </div>
-              <div class="form-group">
-                <div class="col-lg-6 col-lg-offset-6">
-                  <button type="button" class="btn btn-default" style="margin-right: 20px;">取&nbsp&nbsp消</button>
-                  <button type="button" class="btn btn-primary" @click="updateInfo">更&nbsp&nbsp改</button>
+          <div class="col-md-5 col-sm-5 panel" v-show="control.showInfo">
+            <form class="form-horizontal">
+              <fieldset>
+                <legend style="padding-top: 30px; width: 500px;margin: 0 auto;border-bottom: 0px">个人信息</legend>
+                <div class="form-group " style=" width:400px; margin: 20px auto">
+                  <input type="text" class="form-control" v-model="user.username">
                 </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-        <div class="col-md-5 col-sm-5 panel" v-show="!control.showInfo">
-          <form class="form-horizontal">
-            <fieldset>
-              <legend style="padding-top: 30px; width: 500px;margin: 0 auto;border-bottom: 0px">更改密码</legend>
-              <div class="form-group " style=" width:400px; margin: 20px auto">
-                <input type="password" class="form-control" v-model="password.oldPassword" placeholder="当前密码">
-              </div>
-              <div class="form-group" style=" width:400px; margin: 20px auto">
-                <input type="password" class="form-control" v-model="password.newPassword" placeholder="新密码">
-              </div>
-              <div class="form-group" style=" width:400px; margin: 20px auto">
-                <input type="password" class="form-control" v-model="password.rePassword" placeholder="再次输入新密码">
-              </div>
-              <div class="form-group">
-                <div class="col-lg-6 col-lg-offset-6">
-                  <button type="button" class="btn btn-default" style="margin-right: 20px">取&nbsp&nbsp消</button>
-                  <button type="button" class="btn btn-primary" @click="updatePassword">更&nbsp&nbsp改</button>
+                <div class="form-group" style=" width:400px; margin: 20px auto">
+                  <input type="text" class="form-control" v-model="user.id">
                 </div>
-              </div>
-            </fieldset>
-          </form>
+                <div class="form-group">
+                  <div class="col-lg-6 col-lg-offset-6">
+                    <button type="button" class="btn btn-default" style="margin-right: 20px;">取&nbsp&nbsp消</button>
+                    <button type="button" class="btn btn-primary" @click="updateInfo">更&nbsp&nbsp改</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-md-5 col-sm-5 panel" v-show="!control.showInfo">
+            <form class="form-horizontal">
+              <fieldset>
+                <legend style="padding-top: 30px; width: 500px;margin: 0 auto;border-bottom: 0px">更改密码</legend>
+                <div class="form-group " style=" width:400px; margin: 20px auto">
+                  <input type="password" class="form-control" v-model="password.oldPassword" placeholder="当前密码">
+                </div>
+                <div class="form-group" style=" width:400px; margin: 20px auto">
+                  <input type="password" class="form-control" v-model="password.newPassword" placeholder="新密码">
+                </div>
+                <div class="form-group" style=" width:400px; margin: 20px auto">
+                  <input type="password" class="form-control" v-model="password.rePassword" placeholder="再次输入新密码">
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-6 col-lg-offset-6">
+                    <button type="button" class="btn btn-default" style="margin-right: 20px">取&nbsp&nbsp消</button>
+                    <button type="button" class="btn btn-primary" @click="updatePassword">更&nbsp&nbsp改</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -66,6 +68,7 @@
         user: {},
         control:{
           showInfo:true,
+          isActive:true
         },
         password:{
           oldPassword:'',
@@ -84,9 +87,11 @@
     methods:{
       showInfo:function () {
         this.control.showInfo=true
+        this.control.isActive=true
       },
       showPassword:function () {
         this.control.showInfo=false
+        this.control.isActive=false
       },
       updateInfo:function () {
         if(this.user.username.length<0){
