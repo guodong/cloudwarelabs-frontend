@@ -140,9 +140,7 @@
           <p>上海市 嘉定区 曹安公路4800号 同济大学</p>
           <p>gd@tongjo.com</p>
         </div>
-        <footer style="display:block;position: fixed;bottom: 0px; left: 30px; height: 30px;color: white">
-          <strong>Copyright &copy; 2017 <a href="#">Cloudware Lab</a>.</strong> All rights reserved.
-        </footer>
+        <common-footer></common-footer>
       </div>
     </div>
 
@@ -151,6 +149,7 @@
 </template>
 <script>
   import router from '../router'
+  import CommonFooter from './CommonFooter.vue'
   export default{
     name: 'welcome',
     methods: {
@@ -169,7 +168,8 @@
           verticalCentered: false
         });
       });
-    }
+    },
+    components:{CommonFooter}
   }
 </script>
 <style scoped>

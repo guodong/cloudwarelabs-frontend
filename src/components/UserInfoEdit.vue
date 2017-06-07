@@ -1,7 +1,6 @@
 <template>
   <div>
-    <commonheader></commonheader>
-
+    <common-header></common-header>
     <div class="jumbotron" style="max-height: 550px;width: 80%;margin: 0 auto;border-radius: 3%">
       <div class="container info">
         <div class="row">
@@ -56,11 +55,13 @@
         </div>
       </div>
     </div>
+    <common-footer></common-footer>
   </div>
 
 </template>
 <script>
-  import commonheader from './CommonHeader.vue'
+  import CommonHeader from './CommonHeader.vue'
+  import CommonFooter from './CommonFooter.vue'
   export default{
     name: 'userinfoedit',
     data(){
@@ -78,7 +79,7 @@
 
       }
     },
-    components:{commonheader},
+    components:{CommonHeader,CommonFooter},
     created() {
       this.$http.get('users/current').then(resp => {
         this.user = resp.body
