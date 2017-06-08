@@ -2,7 +2,7 @@
   <div style="height: 100%">
     <div id="particles-js"></div>
     <div class="registerpanel">
-      <h1>Cloudware Lab</h1>
+      <h1>Cloudware Labs</h1>
       <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">用户注册</div>

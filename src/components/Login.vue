@@ -2,7 +2,7 @@
   <div class="ht100">
     <div id="particles-js" class="ht100"></div>
     <div class="loginpanel">
-      <h1>Cloudware Lab</h1>
+      <h1>Cloudware Labs</h1>
       <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">登录</div>
@@ -25,16 +25,6 @@
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <input type="password" class="form-control" placeholder="密码" v-model="credentials.password">
             </div>
-
-
-            <!--<div class="input-group" style="margin-left: 15px">-->
-            <!--<div class="checkbox">-->
-            <!--<label>-->
-            <!--<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me-->
-            <!--</label>-->
-            <!--</div>-->
-            <!--</div>-->
-
 
             <div style="text-align: center;margin-top: 5px" class="form-group">
               <a @click="submit()" class="btn btn-primary " style="width: 50%;display: block; margin: 0 auto">登录</a><br>
