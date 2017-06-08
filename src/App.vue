@@ -1,6 +1,9 @@
 <template>
-  <div id="app" class="ht100">
-    <router-view></router-view>
+  <div id="app">
+    <div class="body">
+      <router-view></router-view>
+    </div>
+    <common-footer></common-footer>
   </div>
 </template>
 
@@ -17,6 +20,12 @@ export default {
   .ht100 {
     height: 100%;
   }
-
+  #app {
+    min-height: 100%;
+    position: relative;
+  }
+  .body {
+    padding-bottom: 60px;
+  }
 </style>
 

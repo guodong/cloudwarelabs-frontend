@@ -140,7 +140,6 @@
           <p>上海市 嘉定区 曹安公路4800号 同济大学</p>
           <p>gd@tongjo.com</p>
         </div>
-        <common-footer></common-footer>
       </div>
     </div>
 

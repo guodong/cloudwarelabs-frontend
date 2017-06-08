@@ -16,8 +16,7 @@
               </div>
               <div class="info">{{instance.cloudware.description}}</div>
               <div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-folder-open"></i> 文件</a>
-                <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
+                <a :href="'http://api.cloudwarelabs.org:82/ide.html?token=vfs-' + instance.id" target="_blank" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
                 <router-link :to="{name: 'instancesView', params: {id: instance.id}}" class="btn btn-success"><i class="glyphicon glyphicon-th-large"></i> 云件</router-link>
               </div>
             </div>
