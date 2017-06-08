@@ -8,8 +8,10 @@
 </template>
 
 <script>
+  import CommonFooter from '@/components/CommonFooter.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {CommonFooter}
 }
 </script>
 
