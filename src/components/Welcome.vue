@@ -45,12 +45,12 @@
           </nav>
         </div>
         <div class="content">
-          <h2 style="color: white">Cloudware Lab</h2>
+          <h2 style="color: white">Cloudware Labs</h2>
           <h1 style="color: white">让软件更易使用</h1>
           <ul class="service" style="list-style: none;display: inline-block;padding: 0px">
             <li>
               <i class="fa fa-search" aria-hidden="true"></i>
-              <p>即搜即用</p>
+              <p>即开即用</p>
             </li>
             <li>
               <i class="fa fa-rocket" aria-hidden="true"></i>
@@ -76,7 +76,7 @@
             </div>
             <div class="col-xs-4 col-sm-3">
               <div class="block">
-                <img src="../assets/welcome/autocad.ico">
+                <img src="../assets/welcome/autocad.png">
                 <p>AUTOCAD</p>
               </div>
             </div>
@@ -100,7 +100,7 @@
             </div>
             <div class="col-xs-4 col-sm-3">
               <div class="block">
-                <img src="../assets/welcome/python.ico">
+                <img src="../assets/welcome/python.png">n
                 <p>数据分析</p>
               </div>
             </div>
