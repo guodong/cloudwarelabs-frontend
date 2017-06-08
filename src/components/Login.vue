@@ -2,11 +2,11 @@
   <div class="ht100">
     <div id="particles-js" class="ht100"></div>
     <div class="loginpanel">
-      <h1>Cloudware Labs</h1>
+      <h3>Cloudware Labs</h3>
       <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">登录</div>
-          <div style="float:right; margin-top: 10px"><a @click="toRegister" style="color: white;text-decoration: none">没有账号?</a>
+          <div style="float:right; margin-top: 10px"><router-link to="/register" style="color: white;text-decoration: none">没有账号?</router-link>
           </div>
         </div>
 
@@ -28,7 +28,7 @@
 
             <div style="text-align: center;margin-top: 5px" class="form-group">
               <a @click="submit()" class="btn btn-primary " style="width: 50%;display: block; margin: 0 auto">登录</a><br>
-              <a href="#" style="display: block">忘记密码?</a>
+              <!--<a href="#" style="display: block">忘记密码?</a>-->
             </div>
           </form>
         </div>
@@ -210,5 +210,8 @@
     position: absolute;
     top: 0px;
     left: calc((100vw - 400px) / 2);
+  }
+  h3 {
+    text-align: center;
   }
 </style>

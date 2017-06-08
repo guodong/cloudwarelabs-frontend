@@ -2,7 +2,7 @@
   <div style="height: 100%">
     <div id="particles-js"></div>
     <div class="registerpanel">
-      <h1>Cloudware Labs</h1>
+      <h3>Cloudware Labs</h3>
       <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">用户注册</div>
@@ -22,7 +22,7 @@
             </div>
             <div style="text-align: center;margin-top: 5px" class="form-group">
               <a class="btn btn-primary" style="width: 50%;display: block; margin: 0 auto" @click="submit">注册</a><br>
-              <a @click="toLogin" style="display: block">已有账号?</a>
+              <router-link to="/login" style="display: block">已有账号?</router-link>
             </div>
           </form>
         </div>
@@ -180,12 +180,15 @@
     },
   }
 </script>
-<style>
+<style scoped>
   .registerpanel {
     padding-top: 100px;
     width: 400px;
     position: absolute;
     top: 0px;
     left: calc((100vw - 400px) / 2);
+  }
+  h3 {
+    text-align: center;
   }
 </style>
