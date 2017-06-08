@@ -9,7 +9,12 @@ import Resource from 'vue-resource';
 Vue.use(Resource);
 //Vue.http.options.root = 'http://localhost:8000/v1/';
 Vue.http.options.root = 'http://api.cloudwarelabs.org/v1/';
-Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+Vue.http.interceptors.push(function(request, next) {
+  request.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+
+  // continue to next interceptor
+  next();
+});
 
 Vue.config.productionTip = false
 
