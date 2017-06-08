@@ -65,7 +65,7 @@
       </div>
 
       <div class="section" id="section1">
-        <div class="container" style="padding-top: 120px">
+        <div class="container" style="padding-top: 90px">
           <h1>为你提供所需的一切</h1>
           <div class="row" style="margin-top: 50px">
             <div class="col-xs-4 col-sm-3">
@@ -118,7 +118,7 @@
             </div>
 
           </div>
-          <a style="display:inline-block;margin-top: 30px; font-size: 16px;">查看完整云件列表</a>
+          <!--<a style="display:inline-block;margin-top: 30px; font-size: 16px;">查看完整云件列表</a>-->
         </div>
 
 
@@ -126,7 +126,7 @@
 
 
       <div class="section" id="section2">
-        <div style="padding-top: 120px">
+        <div style="padding-top: 90px">
           <h2 style="margin-left: 100px;margin-bottom: 20px">即搜即用，秒级启动</h2>
           <h2 style="margin-left: 100px">随时回到工作状态</h2>
           <img style="max-width: 80%; display: block;margin: auto" src="../assets/welcome/section2.png">
