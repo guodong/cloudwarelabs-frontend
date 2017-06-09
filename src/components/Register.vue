@@ -10,7 +10,7 @@
         <div style="padding-top:30px" class="panel-body">
           <form id="registerForm" class="form-horizontal" role="form">
             <div style="margin: 20px auto" class="input-group">
-              <input type="text" class="form-control" name="user_name" placeholder="姓名" tips="请输入一个 2-14 位的用户名"
+              <input type="text" class="form-control" name="user_name" placeholder="账号" tips="请输入一个 4-14 位的用户名"
                      errortips="用户名长度不符合" v-model="username">
             </div>
             <div style="margin: 20px auto" class="input-group">

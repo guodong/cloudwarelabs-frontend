@@ -35,15 +35,13 @@
         </div>
       </div>
     </div>
-    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
   import CommonHeader from '../CommonHeader.vue'
-  import CommonFooter from '../CommonFooter.vue'
   export default {
-    components: {CommonHeader,CommonFooter},
+    components: {CommonHeader},
     data () {
       return {
         instances: []

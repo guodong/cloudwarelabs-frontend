@@ -8,21 +8,30 @@ import Welcome from '@/components/Welcome.vue'
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import UserInfoEdit from '@/components/UserInfoEdit.vue'
+import Management from '@/components/management/Index.vue'
+import ManagementCloudwares from '@/components/management/cloudwares/Index.vue'
+import ManagementCloudwaresList from '@/components/management/cloudwares/List.vue'
+import ManagementCloudwaresCreate from '@/components/management/cloudwares/Create.vue'
+import ManagementUsers from '@/components/management/users/Index.vue'
+import ManagementUsersList from '@/components/management/users/List.vue'
 
 Vue.use(Router)
 
-export default new Router({
+var router = new Router({
   mode: 'history',
   linkActiveClass: 'active',
   routes: [{
     path: '/cloudwares',
-    component: Cloudwares
+    component: Cloudwares,
+    meta: { requiresAuth: true }
   }, {
     path: '/instances',
     component: Instances,
+    meta: { requiresAuth: true }
   }, {
     path: '/instances/:id',
     component: Instance,
+    meta: { requiresAuth: true },
     children: [{
       path: 'view',
       name: 'instancesView',
@@ -39,6 +48,48 @@ export default new Router({
     component: Register
   }, {
     path: '/userinfo',
-    component: UserInfoEdit
+    component: UserInfoEdit,
+    meta: { requiresAuth: true }
+  }, {
+    path: '/management',
+    component: Management,
+    meta: { requiresAuth: true },
+    children: [{
+      path: 'cloudwares',
+      component: ManagementCloudwares,
+      children: [{
+        path: '',
+        component: ManagementCloudwaresList
+      }, {
+        path: 'create',
+        component: ManagementCloudwaresCreate
+      }]
+    }, {
+      path: 'users',
+      component: ManagementUsers,
+      children: [{
+        path: '',
+        component: ManagementUsersList
+      }]
+    }]
   }]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (localStorage.getItem('token')) {
+      next()
+    } else {
+      next({
+        path: '/login'
+      })
+    }
+
+  } else {
+    next() // make sure to always call next()!
+  }
+})
+
+export default router
