@@ -8,6 +8,7 @@
         <th>用户名</th>
         <th>角色</th>
         <th>注册时间</th>
+        <th>操作</th>
       </tr>
       </thead>
       <tbody>
@@ -16,6 +17,9 @@
         <td>{{user.username}}</td>
         <td>{{user.role}}</td>
         <td>{{user.created_at}}</td>
+        <td class="ops">
+          <router-link :to="'/management/users/' + user.id + '/edit'" title="编辑"><i class="glyphicon glyphicon-pencil"></i></router-link>
+        </td>
       </tr>
       </tbody>
     </table>
