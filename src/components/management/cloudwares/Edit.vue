@@ -49,9 +49,15 @@
         }
       }
     },
+    created() {
+      this.$http.get('cloudwares/' + this.$route.params.id).then(resp => {
+        this.cloudware = resp.body
+      })
+    },
     methods: {
       submit() {
-        this.$http.post('cloudwares', this.cloudware).then(resp => {
+        this.$http.put('cloudwares/' + this.$route.params.id, this.cloudware).then(resp => {
+          alert('修改成功')
           this.$router.push('/management/cloudwares')
         })
       },

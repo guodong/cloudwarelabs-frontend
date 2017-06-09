@@ -12,6 +12,7 @@ import Management from '@/components/management/Index.vue'
 import ManagementCloudwares from '@/components/management/cloudwares/Index.vue'
 import ManagementCloudwaresList from '@/components/management/cloudwares/List.vue'
 import ManagementCloudwaresCreate from '@/components/management/cloudwares/Create.vue'
+import ManagementCloudwaresEdit from '@/components/management/cloudwares/Edit.vue'
 import ManagementUsers from '@/components/management/users/Index.vue'
 import ManagementUsersList from '@/components/management/users/List.vue'
 
@@ -63,6 +64,9 @@ var router = new Router({
       }, {
         path: 'create',
         component: ManagementCloudwaresCreate
+      }, {
+        path: ':id/edit',
+        component: ManagementCloudwaresEdit
       }]
     }, {
       path: 'users',
