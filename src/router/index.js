@@ -15,6 +15,8 @@ import ManagementCloudwaresCreate from '@/components/management/cloudwares/Creat
 import ManagementCloudwaresEdit from '@/components/management/cloudwares/Edit.vue'
 import ManagementUsers from '@/components/management/users/Index.vue'
 import ManagementUsersList from '@/components/management/users/List.vue'
+import ManagementUsersCreate from '@/components/management/users/Create.vue'
+import ManagementUsersEdit from '@/components/management/users/Edit.vue'
 
 Vue.use(Router)
 
@@ -74,6 +76,12 @@ var router = new Router({
       children: [{
         path: '',
         component: ManagementUsersList
+      }, {
+        path: 'create',
+        component: ManagementUsersCreate
+      }, {
+        path: ':id/edit',
+        component:ManagementUsersEdit
       }]
     }]
   }]
