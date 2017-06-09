@@ -100,7 +100,7 @@
             </div>
             <div class="col-xs-4 col-sm-3">
               <div class="block">
-                <img src="../assets/welcome/python.png">n
+                <img src="../assets/welcome/python.png">
                 <p>数据分析</p>
               </div>
             </div>
