@@ -133,14 +133,14 @@
         </div>
       </div>
 
-      <div class="section" id="section3">
-        <div class="contact">
-          <h3 style="color: white">联系我们</h3>
-          <p>15661816966</p>
-          <p>上海市 嘉定区 曹安公路4800号 同济大学</p>
-          <p>gd@tongjo.com</p>
-        </div>
-      </div>
+      <!--<div class="section" id="section3">-->
+        <!--<div class="contact">-->
+          <!--<h3 style="color: white">联系我们</h3>-->
+          <!--<p>15661816966</p>-->
+          <!--<p>上海市 嘉定区 曹安公路4800号 同济大学</p>-->
+          <!--<p>gd@tongjo.com</p>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
 
   </div>
