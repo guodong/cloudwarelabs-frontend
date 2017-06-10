@@ -77,8 +77,9 @@
                 scroll_top = 0;
               }
               var bei = canvas.offsetWidth / 1440;
+              var beiy = canvas.offsetHeight / 900;
               var x = Math.floor((e.pageX - dom_left) / bei);
-              var y = Math.floor((e.pageY - dom_top + scroll_top) / bei);
+              var y = Math.floor((e.pageY - dom_top + scroll_top) / beiy);
               var buf = new ArrayBuffer(5);
               var dv = new DataView(buf);
               dv.setUint8(0, 0);
