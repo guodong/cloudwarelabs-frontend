@@ -7,9 +7,10 @@
         <h4>云件实例</h4>
       </div>
       <div class="row">
-        <div class="col-md-3" v-for="instance in instances">
+        <div class="col-md-3" v-for="(instance, index) in instances">
           <div class="panel panel-default cloudware-item">
             <div class="panel-body">
+              <button @click="remove(instance, index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <div class="title">
                 <img :src="instance.cloudware.logo">
                 <h5>{{instance.cloudware.name}}</h5>
@@ -44,7 +45,8 @@
     components: {CommonHeader},
     data () {
       return {
-        instances: []
+        instances: [],
+        settings: window.settings
       }
     },
     created() {
@@ -55,6 +57,17 @@
       }).then(resp => {
         this.instances = resp.body
       })
+    },
+    methods: {
+      remove(instance, index) {
+        if (confirm('确实要删除' + instance.cloudware.name +'吗？')) {
+          this.$http.delete('instances/' + instance.id).then(resp => {
+            this.instances.splice(index, 1)
+          }, () => {
+            alert('删除失败')
+          })
+        }
+      }
     }
   }
 </script>
@@ -96,5 +109,8 @@
     margin-top: 60px;
     text-align: center;
     text-decoration: none;
+  }
+  .close {
+    font-size: 18px;
   }
 </style>
