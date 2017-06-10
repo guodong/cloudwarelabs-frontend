@@ -35,7 +35,7 @@
 export default{
   data(){
     return{
-      roles:['学生','管理员'],
+      roles:['user','admin'],
       user:{
         username: '',
         role: ''
