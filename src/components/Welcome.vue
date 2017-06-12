@@ -197,10 +197,6 @@
     z-index: 100;
   }
 
-  .menu {
-    float: right;
-    height: 100%;
-  }
 
   .section {
     text-align: center;
