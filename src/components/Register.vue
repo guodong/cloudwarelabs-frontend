@@ -170,7 +170,7 @@
         router.push('login')
       },
       submit: function() {
-        this.$http.post('users',{username: this.username, password: this.password}).then(resp => {
+        this.$http.post('users', {username: this.username, password: this.password}).then(resp => {
           this.$router.push('/login')
         }, () => {
           alert('注册失败')

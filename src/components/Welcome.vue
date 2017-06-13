@@ -212,9 +212,9 @@
     background-color: #f2f2f2;
   }
 
-  #section3 {
-    background-image: url(../assets/welcome/section3.jpg);
-  }
+  /*#section3 {*/
+    /*background-image: url(../assets/welcome/section3.jpg);*/
+  /*}*/
 
   .content {
     height: 50%;

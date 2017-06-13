@@ -4,7 +4,7 @@
       <div class="page-header">
         <div class="tools">
           <div class="btn-group btn-group-justified">
-            <a class="btn btn-primary" :href="'http://api.cloudwarelabs.org:82/ide.html?token=vfs-' + instance.id" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
+            <a class="btn btn-primary" :href="'http://' + window.settings.ide + '/ide.html?token=vfs-' + instance.id" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
             <a class="btn btn-primary" @click="fullscreen()"><i class="glyphicon glyphicon-fullscreen"></i> 全 屏</a>
           </div>
         </div>
@@ -24,7 +24,8 @@
         },
         isFullscreen: false,
         canvas: null,
-        ws: null
+        ws: null,
+        window: window
       }
     },
     methods: {
@@ -59,7 +60,7 @@
         this.instance = resp.body
         var instance = this.instance
         function connect() {
-          var ws = new WebSocket(instance.ws);
+          var ws = new WebSocket('ws://' + window.settings.proxy + '/pulsar-' + instance.id);
           that.ws = ws
           ws.onerror = function() {
             setTimeout(function() {
@@ -76,8 +77,9 @@
                 scroll_top = 0;
               }
               var bei = canvas.offsetWidth / 1440;
+              var beiy = canvas.offsetHeight / 900;
               var x = Math.floor((e.pageX - dom_left) / bei);
-              var y = Math.floor((e.pageY - dom_top + scroll_top) / bei);
+              var y = Math.floor((e.pageY - dom_top + scroll_top) / beiy);
               var buf = new ArrayBuffer(5);
               var dv = new DataView(buf);
               dv.setUint8(0, 0);
