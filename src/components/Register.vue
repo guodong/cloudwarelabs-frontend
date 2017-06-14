@@ -2,8 +2,8 @@
   <div style="height: 100%">
     <div id="particles-js"></div>
     <div class="registerpanel">
-      <h3>Cloudware Labs</h3>
-      <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
+      <h1>武汉理工大学云件平台</h1>
+      <div class="panel panel-primary" style="width: 50%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">用户注册</div>
         </div>
@@ -182,13 +182,14 @@
 </script>
 <style scoped>
   .registerpanel {
-    padding-top: 100px;
-    width: 400px;
+    padding-top: 50px;
+    width: 600px;
     position: absolute;
     top: 0px;
-    left: calc((100vw - 400px) / 2);
+    left: calc((100vw - 600px) / 2);
   }
-  h3 {
+  h1 {
     text-align: center;
+    margin-bottom: 50px;
   }
 </style>

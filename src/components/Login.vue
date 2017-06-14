@@ -2,8 +2,8 @@
   <div class="ht100">
     <div id="particles-js" class="ht100"></div>
     <div class="loginpanel">
-      <h3>Cloudware Labs</h3>
-      <div class="panel panel-primary" style="width: 70%;margin: 20px auto">
+      <h1>武汉理工大学云件平台</h1>
+      <div class="panel panel-primary" style="width: 50%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">登录</div>
           <div style="float:right; margin-top: 10px"><router-link to="/register" style="color: white;text-decoration: none">没有账号?</router-link>
@@ -204,13 +204,14 @@
   }
 
   .loginpanel {
-    padding-top: 100px;
-    width: 400px;
+    padding-top: 50px;
+    width: 600px;
     position: absolute;
     top: 0px;
-    left: calc((100vw - 400px) / 2);
+    left: calc((100vw - 600px) / 2);
   }
-  h3 {
+  h1 {
     text-align: center;
+    margin-bottom: 50px;
   }
 </style>

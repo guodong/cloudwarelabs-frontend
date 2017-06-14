@@ -5,6 +5,7 @@
         <div id="top-menu">
           <nav class="navbar navbar-default">
             <div class="container">
+
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1">
@@ -13,13 +14,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Cloudware Labs</a>
+                <!--<a class="navbar-brand" href="#"><img src="../assets/whutlogo.png"></a>-->
+                <img src="../assets/whutlogo-w.png">
               </div>
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li><a href="">云件服务 <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">使用帮助</a></li>
+                <!--<ul class="nav navbar-nav">-->
+                  <!--<li><a href="">云件服务 <span class="sr-only">(current)</span></a></li>-->
+                  <!--<li><a href="#">使用帮助</a></li>-->
                   <!--<li class="dropdown">-->
                     <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-->
                       <!--<span class="caret"></span></a>-->
@@ -33,7 +35,7 @@
                       <!--<li><a href="#">One more separated link</a></li>-->
                     <!--</ul>-->
                   <!--</li>-->
-                </ul>
+                <!--</ul>-->
 
                 <ul class="nav navbar-nav navbar-right">
                   <li @click="login" style="cursor: pointer"><a>登录</a></li>
@@ -45,8 +47,8 @@
           </nav>
         </div>
         <div class="content">
-          <h2 style="color: white">Cloudware Labs</h2>
-          <h1 style="color: white">让软件更易使用</h1>
+          <h1 style="color: white">云&nbsp&nbsp件</h1>
+          <h2 style="color: white">让软件更易使用</h2>
           <ul class="service" style="list-style: none;display: inline-block;padding: 0px">
             <li>
               <i class="fa fa-search" aria-hidden="true"></i>
