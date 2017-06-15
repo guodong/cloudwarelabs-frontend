@@ -10,6 +10,7 @@
           <div class="list-group">
             <router-link to="/management/cloudwares" class="list-group-item">云件管理</router-link>
             <router-link to="/management/users" class="list-group-item">用户管理</router-link>
+            <!--<router-link to="/management/system" class="list-group-item">系统设置</router-link>-->
           </div>
         </div>
         <div class="col-md-10">
