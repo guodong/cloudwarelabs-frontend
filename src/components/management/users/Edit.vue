@@ -1,17 +1,18 @@
 <template>
-  <div class="row">
+  <div class="row" style="margin-left: 50px">
     <form class="form-horizontal">
-      <fieldset>
+      <fieldset >
+        <legend>修改用户权限</legend>
         <div class="form-group">
-          <label  class="col-lg-2 control-label">用户名：</label>
+          <label  class="col-lg-2 col-log-offset-2 control-label"><b>用户名</b></label>
           <div class="col-lg-6" >
             <label  class="col-lg-6 control-label" style="text-align: left">{{user.username}}</label>
           </div>
         </div>
         <div class="form-group">
-          <label  class="col-lg-2 control-label">修改用户权限</label>
+          <label  class="col-lg-2 control-label"><b>权&nbsp&nbsp&nbsp&nbsp限</b></label>
           <div class="col-lg-6">
-            <div v-for="role in roles" style="display: inline-block;margin:5px 30px 10px 10px">
+            <div v-for="role in roles" style="display: inline-block;margin:9px 30px 10px 10px">
               <input type="radio"
                      :id="role"
                      :value="role"
@@ -24,7 +25,7 @@
         <div class="form-group">
           <div class="col-lg-6 col-lg-offset-2">
             <router-link class="btn btn-success" exact to="/management/users">取消</router-link>
-            <button type="button" class="btn btn-primary" @click="changeRole()">提交</button>
+            <button type="button" class="btn btn-primary" @click="changeRole()" style="margin-left: 20px">提交</button>
           </div>
         </div>
       </fieldset>
