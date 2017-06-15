@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navbar navbar-default">
-      <div class="container">
+      <div class="container" style="width: 100%">
         <div class="navbar-header">
           <!--<a href="../" class="navbar-brand">CloudwareLabs</a>-->
           <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">-->

@@ -4,7 +4,7 @@
       <div class="section active" id="section0">
         <div id="top-menu">
           <nav class="navbar navbar-default">
-            <div class="container">
+            <div class="container" style="width: 100%">
 
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"

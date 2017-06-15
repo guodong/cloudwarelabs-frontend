@@ -171,9 +171,10 @@
       },
       submit: function() {
         this.$http.post('users', {username: this.username, password: this.password}).then(resp => {
+          alert('注册成功！')
           this.$router.push('/login')
         }, () => {
-          alert('注册失败')
+          alert('注册失败！')
         })
 
       }
