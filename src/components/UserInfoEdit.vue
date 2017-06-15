@@ -19,7 +19,7 @@
                   <input type="text" class="form-control" v-model="user.username">
                 </div>
                 <div class="form-group" style=" width:400px; margin: 20px auto">
-                  <input type="text" class="form-control" v-model="user.id">
+                  <input type="text" class="form-control" v-model="user.id" disabled>
                 </div>
                 <div class="form-group">
                   <div class="col-lg-6 col-lg-offset-6">

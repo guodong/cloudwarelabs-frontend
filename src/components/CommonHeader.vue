@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="navbar navbar-default">
-      <div class="container">
+      <div class="container" style="width: 100%">
         <div class="navbar-header">
-          <a href="../" class="navbar-brand">CloudwareLabs</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          <!--<a href="../" class="navbar-brand">CloudwareLabs</a>-->
+          <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+          <!--</button>-->
+          <img src="../assets/whutlogo.png">
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
