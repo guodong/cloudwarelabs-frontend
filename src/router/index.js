@@ -17,7 +17,7 @@ import ManagementUsers from '@/components/management/users/Index.vue'
 import ManagementUsersList from '@/components/management/users/List.vue'
 import ManagementUsersCreate from '@/components/management/users/Create.vue'
 import ManagementUsersEdit from '@/components/management/users/Edit.vue'
-import ManagementSystem from '@/components/management/System.vue'
+import ManagementInstances from '@/components/management/Instances.vue'
 
 Vue.use(Router)
 
@@ -85,8 +85,8 @@ var router = new Router({
         component:ManagementUsersEdit
       }]
     }, {
-      path: 'system',
-      component: ManagementSystem
+      path: 'instances',
+      component: ManagementInstances
     }]
   }]
 })
