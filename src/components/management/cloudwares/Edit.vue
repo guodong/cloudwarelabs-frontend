@@ -21,6 +21,20 @@
           </div>
         </div>
         <div class="form-group">
+          <label for="memory" class="col-lg-2 control-label">内存限制</label>
+          <div class="col-lg-10">
+            <select class="form-control" id="memory" v-model="cloudware.memory">
+              <option value="0.00">不限制</option>
+              <option value="1.00">1G</option>
+              <option value="2.00">2G</option>
+              <option value="4.00">4G</option>
+              <option value="8.00">8G</option>
+              <option value="16.00">16G</option>
+            </select>
+            <!--<input v-model="cloudware.memory" type="text" class="form-control" id="memory" placeholder="内存限制">-->
+          </div>
+        </div>
+        <div class="form-group">
           <label for="logo" class="col-lg-2 control-label">图片</label>
           <div class="col-lg-10">
             <img class="logo" :src="cloudware.logo">

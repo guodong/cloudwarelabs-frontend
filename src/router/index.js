@@ -17,6 +17,9 @@ import ManagementUsers from '@/components/management/users/Index.vue'
 import ManagementUsersList from '@/components/management/users/List.vue'
 import ManagementUsersCreate from '@/components/management/users/Create.vue'
 import ManagementUsersEdit from '@/components/management/users/Edit.vue'
+import ManagementInstances from '@/components/management/Instances.vue'
+import HomeworkManagement from '@/components/homeworkManagement/Index.vue'
+import AddCourse from '@/components/homeworkManagement/AddCourse.vue'
 
 Vue.use(Router)
 
@@ -83,6 +86,16 @@ var router = new Router({
         path: ':id/edit',
         component:ManagementUsersEdit
       }]
+    }, {
+      path: 'instances',
+      component: ManagementInstances
+    }]
+  },{
+    path: '/homework',
+    component: HomeworkManagement,
+    children: [{
+      path: 'addcourse',
+      component: AddCourse
     }]
   }]
 })

@@ -15,7 +15,9 @@
           <ul class="nav navbar-nav">
             <router-link tag="li" to="/instances"><a>云件实例</a></router-link>
             <router-link tag="li" to="/cloudwares"><a>云件服务</a></router-link>
+
             <router-link tag="li" to="/management" v-if="user.role == 'admin'"><a>系统管理</a></router-link>
+            <router-link tag="li" to="/homework"><a>作业管理</a></router-link>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
