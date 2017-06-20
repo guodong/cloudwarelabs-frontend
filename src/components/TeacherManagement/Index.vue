@@ -200,16 +200,10 @@
       }
     },
     created() {
-//      this.$router.push('/management/cloudwares')
       this.currentCourse=this.courses[0]
     }
   }
 </script>
 <style scoped>
-  .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-    z-index: 2;
-    color: #ffffff;
-    background-color: #2196f3;
-    border-color: #2196f3;
-  }
+
 </style>
