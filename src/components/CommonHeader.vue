@@ -18,7 +18,7 @@
 
             <router-link tag="li" to="/management" v-if="user.role == 'admin'"><a>系统管理</a></router-link>
             <router-link tag="li" to="/student" v-if="user.role == 'student'"><a>我的作业</a></router-link>
-            <router-link tag="li" to="/teacher" v-if="user.role == 'admin'"><a>作业管理</a></router-link>
+            <router-link tag="li" to="/teacher" v-if="user.role == 'teacher'"><a>作业管理</a></router-link>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">

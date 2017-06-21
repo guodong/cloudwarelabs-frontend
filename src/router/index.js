@@ -45,6 +45,7 @@ var router = new Router({
     }]
   }, {
     path:'/',
+
     component: Welcome
   }, {
     path: '/login',

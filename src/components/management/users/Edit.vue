@@ -36,7 +36,7 @@
 export default{
   data(){
     return{
-      roles:['user','admin'],
+      roles:['user','teacher','admin'],
       user:{
         username: '',
         role: ''
