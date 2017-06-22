@@ -20,6 +20,9 @@ switch (host) {
   case 'localhost':
     api = 'http://api.cl.descloud.io/v1/'
     break
+  case '127.0.0.1':
+    api = 'http://localhost:8000/v1/'
+    break
   default:
     api = 'http://api.cloudwarelabs.org/v1/'
     break
