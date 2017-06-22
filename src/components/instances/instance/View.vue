@@ -7,6 +7,7 @@
             <a class="btn btn-primary" :href="'http://' + window.settings.ide + '/ide.html?token=vfs-' + instance.id" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
             <a class="btn btn-primary" @click="fullscreen()"><i class="glyphicon glyphicon-fullscreen"></i> 全 屏</a>
           </div>
+
         </div>
         <h4><a href="#" @click="back()"><i class="glyphicon glyphicon-arrow-left"></i></a> {{instance.cloudware.name}}</h4>
       </div>
@@ -251,7 +252,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .tools {
-    width: 200px;
+    width: 300px;
     float: right;
   }
 </style>
