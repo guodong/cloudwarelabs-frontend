@@ -16,9 +16,9 @@ switch (host) {
   case '59.69.103.174':
     api = 'http://59.69.103.174:81/v1/'
     break
-  case 'www.cloudwarelabs.org':
-  case 'localhost:8080':
-    api = 'http://api.cloudwarelabs.org/v1/'
+  case 'cl.descloud.io':
+  case 'localhost':
+    api = 'http://api.cl.descloud.io/v1/'
     break
   default:
     api = 'http://api.cloudwarelabs.org/v1/'
