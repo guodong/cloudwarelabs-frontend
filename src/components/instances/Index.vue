@@ -11,7 +11,7 @@
           <div class="panel panel-default cloudware-item">
             <div class="panel-body">
               <span title="删除镜像"><a @click="remove(instance, index)" class="close"><i class="glyphicon glyphicon-remove"></i></a></span>
-              <span title="提交作业"><a class="close" data-toggle="modal" data-target="#myModal" style="margin-right: 5px"><i class="glyphicon glyphicon-upload"></i></a></span>
+              <span title="提交作业"><a class="close" data-toggle="modal" data-target="#myModal" style="margin-right: 5px" @click="setCurrentInstance(instance)"><i class="glyphicon glyphicon-upload"></i></a></span>
 
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" @click="submit(instance)">提交</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" @click="submit(currentInstance)">提交</button>
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,8 @@
 
         homeworkList: [],
         choosedHomework: {},
-        description: ''
+        description: '',
+        currentInstance:{}
       }
     },
     created() {
@@ -104,6 +105,9 @@
       })
     },
     methods: {
+      setCurrentInstance(instance){
+        this.currentInstance=instance;
+      },
       remove(instance, index) {
         if (confirm('确实要删除' + instance.cloudware.name +'吗？')) {
           this.$http.delete('instances/' + instance.id).then(resp => {
