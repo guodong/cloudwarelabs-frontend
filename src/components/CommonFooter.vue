@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <strong>Copyright &copy; 2017 <a href="#">Cloudware Labs</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2017 <a href="#"></a>.</strong> All rights reserved.
   </footer>
 </template>
 <script>
