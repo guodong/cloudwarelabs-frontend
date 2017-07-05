@@ -106,6 +106,9 @@
                 ws.send(buf);
             };
             document.onkeydown = function (e) {
+              if (e.keyCode == 91 || e.keyCode == 67) {
+                return;
+              }
               if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
                 e.preventDefault(); // stops its action
               }
@@ -117,6 +120,9 @@
                 ws.send(buf);
             };
             document.onkeyup = function (e) {
+              if (e.keyCode == 91 || e.keyCode == 67) {
+                return;
+              }
               if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
                 e.preventDefault(); // stops its action
               }
