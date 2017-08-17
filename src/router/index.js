@@ -20,6 +20,9 @@ import ManagementUsersEdit from '@/components/management/users/Edit.vue'
 import ManagementInstances from '@/components/management/Instances.vue'
 import TeacherManagement from '@/components/TeacherManagement/Index.vue'
 import StudentManagement from '@/components/StudentManagement/Index.vue'
+import BigdataCourse from '@/components/bigdataCourse/Index.vue'
+import BigdataExperiment from '@/components/bigdataExperiment/Index.vue'
+import BigdataProject from '@/components/bigdataProject/Index.vue'
 
 Vue.use(Router)
 
@@ -97,7 +100,16 @@ var router = new Router({
   },{
     path: '/student',
     component: StudentManagement
-  }]
+  },{
+    path: '/bigdatacourse',
+    component: BigdataCourse
+  },{
+    path: '/bigdataexperiment',
+    component: BigdataExperiment
+  },{
+    path: '/bigdataproject',
+    component: BigdataProject
+  },]
 })
 
 router.beforeEach((to, from, next) => {

@@ -13,7 +13,7 @@
               <!--<span class="caret"></span>-->
             <!--</button>-->
             <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style=" font-size: 16px; width:100%">-->
-              <!--<li v-for="course,index in courses" @click="chooseCourse(index)"><a>{{course.name}}</a></li>-->
+              <!--<li v-fbigdataCourseurse,index in courses" @click="chooseCourse(index)"><bigdataCourseurse.name}}</a></li>-->
               <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width: 100%">新建课程</button>-->
             <!--</ul>-->
             <!--&lt;!&ndash; Modal &ndash;&gt;-->

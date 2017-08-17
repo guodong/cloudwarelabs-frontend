@@ -15,6 +15,9 @@
           <ul class="nav navbar-nav">
             <router-link tag="li" to="/instances"><a>云件实例</a></router-link>
             <router-link tag="li" to="/cloudwares"><a>云件服务</a></router-link>
+            <router-link tag="li" to="/bigdatacourse"><a>课程</a></router-link>
+            <router-link tag="li" to="/bigdataexperiment"><a>实验列表</a></router-link>
+            <router-link tag="li" to="/bigdataproject"><a>大数据案例</a></router-link>
 
             <router-link tag="li" to="/management" v-if="user.role == 'admin'"><a>系统管理</a></router-link>
             <router-link tag="li" to="/student" v-if="user.role == 'user'"><a>我的作业</a></router-link>
