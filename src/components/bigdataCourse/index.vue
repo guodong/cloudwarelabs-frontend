@@ -45,6 +45,9 @@
     data () {
       return {
         content: [
+          {"isNew":true,titleClass:"",title:"数据分析与挖掘",pic:"static/course/1.jpg",intro:"关键词：数据科学、大数据、分析思维",link:"http://cl.descloud.io/bigdataexperiment/dm"},
+          {"isNew":true,titleClass:"",title:"大数据技术",pic:"static/course/2.jpg",intro:"关键词：数据科学、大数据、分析思维",link:"http://cl.descloud.io/bigdataexperiment/bdm"},
+          {"isNew":true,titleClass:"",title:"大数据案例分析",pic:"static/course/3.jpg",intro:"关键词：数据科学、大数据、分析思维",link:"http://cl.descloud.io/bigdataproject"},
           {"isNew":true,titleClass:"",title:"数据科学通识",pic:"static/course/datascience.png",intro:"关键词：数据科学、大数据、分析思维",link:"http://dwz.cn/5QEtI5"},
           {"isNew":false,titleClass:"",title:"大数据原理",pic:"static/course/bigdata.png",intro:"关键词：大数据、数据科学、分析思维",link:"http://dwz.cn/5QEccM"},
           {"isNew":false,titleClass:"",title:"星环Inceptor",pic:"static/course/inceptor.png",intro:"关键词：Inceptor SQL、外部连接、运维",link:"https://docs.transwarp.cn/4.8/InceptorManual-chunked.html?iframe=true"},

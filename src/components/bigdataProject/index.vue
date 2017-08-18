@@ -10,7 +10,7 @@
               <div class="speical speical-radius">
                   <div class="speical-content">
                     <div class="div-overflow">
-                      <h3 class="text-special-default">上海地铁站点可视化</h3>
+                      <h3 class="text-special-default">上海地铁站点</h3>
                     </div>
                     <p>
                       <a href="static/case/metro/metroSrc/metro_index.html" alt="上海地铁站点可视化" target="_blank">
@@ -35,7 +35,7 @@
                     </a>
                   </p>
                   <div class="div-table">
-                    <p class="div-content-cell">担保链分析是discover推出的系列标准案例之一</p>
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@
                     </a>
                   </p>
                   <div class="div-table">
-                    <p class="div-content-cell">本案例主要对某机构的用户交易记录进行分析，探索用户流失的原因，建立用户流失预警模型，并预测用户流失的概率</p>
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,110 @@
                     </a>
                   </p>
                   <div class="div-table">
-                    <p class="div-content-cell">本案例通过对定位信息的分析，选择合适的数据挖掘算法，结合地图信息，实现了热门商圈的聚类和可视化展示</p>
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">异常检测</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/anormaly-detection.html" alt="异常检测" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/yichangjiance.jpg">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">关联规则推荐</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/asocciation-rules.html" alt="关联规则推荐" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/guanlianguizetuijian.jpg">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">协同滤波推荐</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/anormaly-detection.html" alt="协同滤波推荐" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/xietongbotuijian.png">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">Kmeans聚类</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/kmeans-analysis.html" alt="Kmeans聚类" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/yichangjiance.jpg">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">生存分析</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/survival-analysis.html" alt="生存分析" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/shengcunfenxi.png">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="speical speical-radius">
+                <div class="speical-content">
+                  <div class="div-overflow">
+                    <h3 class="text-special-default">用户画像</h3>
+                  </div>
+                  <p>
+                    <a href="http://transwarp.io/discover/latest/cases/R/user-tag.html" alt="用户画像" target="_blank">
+                      <img class="img-responsive img-rounded" src="static/case/yonghuhuaxiang.jpg">
+                    </a>
+                  </p>
+                  <div class="div-table">
+                    <p class="div-content-cell">discover推出的系列标准案例</p>
                   </div>
                 </div>
               </div>
