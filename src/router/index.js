@@ -21,8 +21,14 @@ import ManagementInstances from '@/components/management/Instances.vue'
 import TeacherManagement from '@/components/TeacherManagement/Index.vue'
 import StudentManagement from '@/components/StudentManagement/Index.vue'
 import BigdataCourse from '@/components/bigdataCourse/Index.vue'
+
 import BigdataExperiment from '@/components/bigdataExperiment/Index.vue'
+import Elanguage from '@/components/bigdataExperiment/language.vue'
+import Ebdm from '@/components/bigdataExperiment/bdm.vue'
+import EbigdataE from '@/components/bigdataExperiment/bigdataE.vue'
+import Edm from '@/components/bigdataExperiment/dm.vue'
 import BigdataProject from '@/components/bigdataProject/Index.vue'
+
 
 Vue.use(Router)
 
@@ -105,7 +111,23 @@ var router = new Router({
     component: BigdataCourse
   },{
     path: '/bigdataexperiment',
-    component: BigdataExperiment
+    component: BigdataExperiment,
+    children: [{
+      path: '',
+      component: Elanguage
+    },{
+      path: 'bdm',
+      component: Ebdm
+    },{
+      path: 'dm',
+      component: Edm
+    },{
+      path: 'language',
+      component: Elanguage
+    },{
+      path: 'bigdatae',
+      component: EbigdataE
+    }]
   },{
     path: '/bigdataproject',
     component: BigdataProject
