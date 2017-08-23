@@ -6,13 +6,24 @@
         <h4>我的作业</h4>
       </div>
       <div class="row">
-        <div class="col-md-2">
-          <h5 style="margin-top: 40px">作业列表</h5>
-          <div class="list-group" >
-            <button  class="list-group-item" v-for="homework in homeworkList">{{homework.title}}</button>
+        <div class="col-md-3">
+          <h5 style="margin-bottom: 40px">作业列表</h5>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" v-for="homework in homeworkList">
+            <a class="btn btn-primary" style="width: 100%" role="button" data-toggle="collapse" :href="'#'+homework.id" aria-expanded="false" aria-controls="collapseExample">
+              {{homework.title}}
+            </a>
+            <div class="collapse" :id="homework.id">
+              <div class="well">
+                {{homework.description}}
+              </div>
+            </div>
           </div>
+
+          <!--<div class="list-group" >-->
+            <!--<button  class="list-group-item" v-for="homework in homeworkList">{{homework.title}}</button>-->
+          <!--</div>-->
         </div>
-        <div class="col-md-8 col-md-offset-1">
+        <div class="col-md-7 col-md-offset-1">
           <h5>已提交作业</h5>
           <table class="table table-hover" >
             <thead>
