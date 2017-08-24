@@ -29,7 +29,7 @@
         experiments: [
           {title:"决策树分类实验",description:"决策树",link:"/static/experiments/bdm/dt/dt.html"},
           {title:"随机森林分类实验",description:"随机森林",link:"/static/experiments/bdm/rf/rf.html"},
-          {title:"支持向量机分类实验",description:"svm",link:"/static/experiments/bdm/dt/dt.html"},
+          {title:"支持向量机分类实验",description:"svm",link:"/static/experiments/bdm/svm/svm.html"},
         ]
       }
     },

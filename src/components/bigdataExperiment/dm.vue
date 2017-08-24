@@ -28,9 +28,9 @@
       return {
         experiments: [
           {title:"R语言Kmeans聚类实验",description:"Kmeans聚类",link:"/static/experiments/dm/kmeans/kmeans.html"},
-          {title:"用K近邻算法实现分类实验",description:"K近邻算法",link:"/static/experiments/dm/kmeans/kmeans.html"},
-          {title:"Python回归分析实验",description:"回归分析",link:"/static/experiments/dm/kmeans/kmeans.html"},
-          {title:"Python数据降维实验",description:"数据降维",link:"/static/experiments/dm/kmeans/kmeans.html"},
+          {title:"用K近邻算法实现分类实验",description:"K近邻算法",link:"/static/experiments/dm/knn/knn.html"},
+          {title:"Python回归分析实验",description:"回归分析",link:"/static/experiments/dm/pythonLine/pythonLine.html"},
+          {title:"Python数据降维实验",description:"数据降维",link:"/static/experiments/dm/pythonPCA/pythonPCA.html"},
         ]
       }
     },

@@ -28,7 +28,7 @@
       return {
         experiments: [
           {title:"搭建Hadoop运行环境",description:"hadoop",link:"/static/experiments/bigdataE/hadoop/hadoop.html"},
-          {title:"Mapreduce开发实验",description:"mapreduce",link:"/static/experiments/bigdataE/hadoop/hadoop.html"},
+          {title:"Mapreduce开发实验",description:"mapreduce",link:"/static/experiments/bigdataE/mapreduce/wordcount.html"},
         ]
       }
     },

@@ -28,8 +28,8 @@
       return {
         experiments: [
           {title:"R语言编程基础实验",description:"R语言操作入门",link:"/static/experiments/language/rbasic/rbasic.html"},
-          {title:"R语言统计与建模实验",description:"用R语言进行数据分析",link:"/static/experiments/language/rbasic/rbasic.html"},
-          {title:"python语言编程基础实验",description:"python语言操作入门",link:"/static/experiments/language/rbasic/rbasic.html"},
+          {title:"R语言统计与建模实验",description:"用R语言进行数据分析",link:"/static/experiments/language/rbasic/ranalysis.html"},
+          {title:"python语言编程基础实验",description:"python语言操作入门",link:"http://www.greenteapress.com/thinkpython/thinkpython.pdf"},
           {title:"python语言统计与建模实验",description:"python语言进行数据分析",link:"/static/experiments/language/rbasic/rbasic.html"},
         ]
       }
