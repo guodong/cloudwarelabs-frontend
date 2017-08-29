@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>R语言编程基础实验</title>
+  <meta charset="UTF-8">
+  <title>R语言编程基础实验</title>
   <link rel="stylesheet" href="../../../bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../../css/main.css">
-
   <script src="../../../js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     function getCloudware() {
@@ -17,9 +16,9 @@
           var json = eval("("+data+")");
           var json = JSON.parse( data );
           for(var i in json){
-              if(json[i].name=="Rstudio"){
-                $("#cloudwareID").val(json[i].id);
-              }
+            if(json[i].name=="Rstudio"){
+              $("#cloudwareID").val(json[i].id);
+            }
           }
         },
         error: function(XMLHttpRequest) {
@@ -31,14 +30,13 @@
       var cid = $("#cloudwareID").val();
       //alert("cid:"+cid);
       var token = localStorage.getItem('token');
-      //alert(token);
       $.ajax({
         type: "POST",
         url: "http://api.cl.descloud.io/v1/instances/",
         data: "cloudware_id="+cid,
         //data:{cloudware_id:+cid},
         headers: {
-            'Authorization': 'Bearer '+token,
+          'Authorization': 'Bearer '+token,
         },
         success: function(data){
           window.location.href='http://cl.descloud.io/instances/'+cid+'/view';
@@ -48,15 +46,6 @@
         }
       });
     }
-    /*$(document).ready(function(){
-      $("button").click(function(){
-        $.get("http://api.cl.descloud.io/v1/cloudwares",function(data,status){
-          alert("数据：" + data + "\n状态：" + status);
-
-        });
-      });
-    });*/
-    //f27f91a5-963c-469f-a5db-3a1e236cfd43
   </script>
 
   <style type="text/css">
@@ -133,45 +122,55 @@
   </style>
 </head>
 <body onload="getCloudware()">
-  <div class="container-fluid">
+<div class="container-fluid">
   <div class="row row-common-style row-height text-center">
-    <h1 class="color-black">k-means聚类</h1>
-    <p class="p-color p-title">本篇将k-means的原理及其在数据分析中的应用</p>
+    <h1 class="color-black">决策树</h1>
+    <p class="p-color p-title">本篇将带你入门决策树在分类问题中的应用</p>
   </div>
 </div>
-  <!--正文内容-->
-  <div class="row">
+<!--正文内容-->
+<div class="row">
   <div class="col-md-8 col-md-offset-2">
     <!--<button class="btn-primary btn" style="float: right"><a href="../tool/r.html" target="_blank" style="text-decoration: none;color: white">在线实验</a></button>-->
     <br/>
     <br/>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;在K均值算法中，质心是定义聚类原型（也就是机器学习获得的结果）的核心。在介绍算法实施的具体过程中，我们将演示质心的计算方法。而且你将看到除了第一次的质心是被指定的以外，此后的质心都是经由计算均值而获得的。</p>
-    <br />
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;首先，选择K个初始质心（这K个质心并不要求来自于样本数据集），其中K是用户指定的参数，也就是所期望的簇的个数。每个数据点都被收归到距其最近之质心的分类中，而同一个质心所收归的点集为一个簇。然后，根据本次分类的结果，更新每个簇的质心。重复上述数据点分类与质心变更步骤，直到簇内数据点不再改变，或者等价地说，直到质心不再改变。</p>
-    <br />
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;我们使用r语言中的数据集iris实现k-means聚类算法：</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;决策树(Decision Tree）是一种十分常用的分类算法，是在已知各种情况发生概率的基础上，通过构成决策树来求取净现值的期望值大于等于零的概率，评价项目风险，判断其可行性的决策分析方法，是直观运用概率分析的一种图解法。由于这种决策分支画成图形很像一棵树的枝干，故称决策树。</p>
+    <br/>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;决策树是一种树形结构，其中每个内部节点表示一个属性上的测试，每个分支代表一个测试输出，每个叶节点代表一种类别。下面我们在iris数据集上演示如何使用party包中的ctree()函数来建立一棵决策树。</p>
     <pre>
-            # 载入iris数据集并命名为iris2，移除Species类别属性
-            iris1 <- iris
-            iris1$Species <- NULL
-
-            # 对iris1数据集调用函数kmeans()，并将结果存储在变量kmeans.result中
-            (kmeans.result <- kmeans(iris1,3))
-
-            # 聚类结果如下
-            K-means clustering with 3 clusters of sizes 33, 21, 96
-            Cluster means:
-                Sepal.Length Sepal.Width Petal.Length Petal.Width
-            1     5.175758    3.624242     1.472727   0.2727273
-            2     4.738095    2.904762     1.790476   0.3523810
-            3     6.314583    2.895833     4.973958   1.7031250
-
-            # 绘制散点图并标记所有的簇以及簇中心，需要注意的是数据集有四个维度但是绘图只使用前两个维度
-            plot(iris1[c("Sepal.Length","Sepal.Width")],col=kmeans.result$cluster)
-            points(kmeans.result$centers[,c("Sepal.Length","Sepal.Width")],col=1:3,pch=8,cex=2)
+            # 加载party函数包
+            library(party)
+            # 导入iris数据集
+            data(iris)
+            # 生成采样数据
+            set.seed(1234)
+            ind <- sample(2,nrow(iris),replace=TRUE,prob=c(0.7,0.3))
+            # 生成训练数据集iris.learn和测试数据集iris.valid
+            testData <- iris[ind==2,]
+            trainData <- iris[ind==1,]
+            # 调用ctree()函数
+            myFormular <- Species~Sepal.Length+Sepal.Width+Petal.Length+Petal.Width
+            iris_ctree <- ctree(myFormular,data=trainData)
+            # 查看训练数据集上的拟合结果
+            table(predict(iris.ctree,trainData$Species))
+            setosa versicolor virginica
+            setosa         40          0         0
+            versicolor      0         37         3
+            virginica       0          1        31
+            # 绘制生成的决策树
+            plot(iris_ctree，type=”simple”)
         </pre>
     <img class="img-responsive" src="img1.png">
+    <pre>
+            # 查看测试数据集上的预测结果
+            testPred <- predict(iris_ctree,newdata=testData)
+            table(testPred,testData$Species)
 
+            testPred     setosa versicolor virginica
+            setosa         10          0         0
+            versicolor      0         12         2
+            virginica       0          0        14
+        </pre>
 
     <input type="hidden" name="cloudwareID" id="cloudwareID">
     <button class="btn btn-success btn-block" type="button" onclick="run()">运行实例</button>
