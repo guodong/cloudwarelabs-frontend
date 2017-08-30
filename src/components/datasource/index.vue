@@ -10,7 +10,7 @@
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;数据的具体来源如下：</h2>
 
         <ul>
-          <ul>
+          <!--<ul>
             <h3>1、政府数据（Government data)</h3>
             <li><a href="http://data.un.org/">UNdata（联合国数据库）：联合国统计司（The United Nations Statistics Division）为全球用户启动了的互联网数据服务。供用户搜索和下载联合国系统的各种统计资源。</a> </li>
             <li><a href="http://data.gov">Data.gov：美国政府承诺免费公开的政府数据。网站内数据集设计农业、气候、进入等近20个领域的数据。</a> </li>
@@ -63,22 +63,22 @@
             <li><a href="http://labrosa.ee.columbia.edu/millionsong/">Million Song Dataset（百万音乐数据库）</a> </li>
             <li><a href="https://www.firebase.com/docs/open-data/airports.html">Airport Open Data Sets（机场数据库）</a> </li>
             <li><a href="https://grouplens.org/datasets/movielens/">Grouplens：从MovieLens网站收集并提供了评级数据集。</a> </li>
-          </ul>
+          </ul>-->
           <ul>
-            <h3>7、科学研究(Science Rearch)</h3>
-            <li><a href="http://webscope.sandbox.yahoo.com/catalog.php?datatype=l">Language Data：Yahoo语言数据集</a> </li>
-            <li><a href="http://data.worldbank.org/">世界银行TCdata360的大数据平台：TCdata360平台整合并视觉化呈现20多个来源的公开数据</a> </li>
-            <li><a href="http://www.ncmi.cn/1">国家人口与健康科学数据共享平台</a> </li>
-            <li><a href="https://data.nasa.gov/">NASA开放数据源</a> </li>
+            <h3>1、科学研究(Science Rearch)</h3>
+            <li><a href="http://webscope.sandbox.yahoo.com/catalog.php?datatype=l" target="_blank">Language Data：Yahoo语言数据集</a> </li>
+            <li><a href="http://data.worldbank.org/" target="_blank">世界银行TCdata360的大数据平台：TCdata360平台整合并视觉化呈现20多个来源的公开数据</a> </li>
+            <li><a href="http://www.ncmi.cn/1" target="_blank">国家人口与健康科学数据共享平台</a> </li>
+            <li><a href="https://data.nasa.gov/" target="_blank">NASA开放数据源</a> </li>
             <li><a href=""></a> </li>
           </ul>
           <ul>
-            <h3>8、竞赛数据(Competition Data)</h3>
-            <li><a href="https://www.kaggle.com/">Kaggle竞赛平台</a> </li>
-            <li><a href="http://www.kdd.org/kdd-cup">KDD Cups</a> </li>
+            <h3>2、竞赛数据(Competition Data)</h3>
+            <li><a href="https://www.kaggle.com/" target="_blank">Kaggle竞赛平台</a> </li>
+            <li><a href="http://www.kdd.org/kdd-cup" target="_blank">KDD Cups</a> </li>
             <li><a href="https://www.drivendata.org/">Driven Data</a> </li>
-            <li><a href="https://tianchi.shuju.aliyun.com/">天池大数据竞赛：是由阿里云主办，面向全球新生代力量的高端算法竞赛。</a> </li>
-            <li><a href="http://soda.datashanghai.gov.cn/">SODA上海开放数据创新应用大赛</a> </li>
+            <li><a href="https://tianchi.shuju.aliyun.com/" target="_blank">天池大数据竞赛：是由阿里云主办，面向全球新生代力量的高端算法竞赛。</a> </li>
+            <li><a href="http://soda.datashanghai.gov.cn/" target="_blank">SODA上海开放数据创新应用大赛</a> </li>
           </ul>
 
         </ul>
