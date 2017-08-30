@@ -26,8 +26,8 @@
           </nav>
         </div>
         <div class="content">
-          <h1 style="color: white">星环大数据</h1>
-          <h2 style="color: white">让数据更易操作</h2>
+          <h1 style="color: white">上海应用技术大学</h1>
+          <h2 style="color: white">大数据实验教学平台</h2>
           <ul class="service" style="list-style: none;display: inline-block;padding: 0px">
             <li>
               <i class="fa fa-search" aria-hidden="true"></i>

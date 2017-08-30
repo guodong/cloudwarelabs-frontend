@@ -2,7 +2,7 @@
   <div class="ht100">
     <div id="particles-js" class="ht100"></div>
     <div class="loginpanel">
-      <h1>星环大数据教学系统</h1>
+      <h1>大数据实验教学平台</h1>
       <div class="panel panel-primary" style="width: 50%;margin: 20px auto">
         <div class="panel-heading">
           <div class="panel-title" style="display: inline-block">登录</div>

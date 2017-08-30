@@ -6,12 +6,42 @@
           <div class="btn-group btn-group-justified">
             <a class="btn btn-primary" :href="'http://' + window.settings.ide + '/ide.html?token=vfs-' + instance.id" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> IDE</a>
             <a class="btn btn-primary" @click="fullscreen()"><i class="glyphicon glyphicon-fullscreen"></i> 全 屏</a>
+            <a class="btn btn-primary" data-toggle="modal" data-target="#myModal" @click="setCurrentInstance(instance)"><i class="glyphicon glyphicon-upload"></i> 提交作业</a>
+
           </div>
 
         </div>
         <h4><a href="#" @click="back()"><i class="glyphicon glyphicon-arrow-left"></i></a> {{instance.cloudware.name}}</h4>
       </div>
       <div id="screen"></div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">作业提交</h4>
+          </div>
+          <div class="modal-body">
+            <span>选择作业：</span>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 100%;">
+                {{choosedHomework.title}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style=" font-size: 16px; width:100%">
+                <li v-for="homework,index in homeworkList" @click="chooseHomework(homework)"><a>{{homework.title}}</a></li>
+              </ul>
+            </div>
+            <span>作业描述:</span>
+            <textarea v-model="description" style="width:80%; margin-top: 20px"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" @click="submit(currentInstance)">提交</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,7 +56,11 @@
         isFullscreen: false,
         canvas: null,
         ws: null,
-        window: window
+        window: window,
+        currentInstance: null,
+        homeworkList: [],
+        choosedHomework: {},
+        description: '',
       }
     },
     methods: {
@@ -44,9 +78,35 @@
           this.ws.close()
         }
         this.$router.push('/instances')
+      },
+      setCurrentInstance(instance){
+        this.currentInstance=instance;
+      },
+      submit(instance){
+        this.$http.post('submissions',{homework_id:this.choosedHomework.id, instance_id: instance.id, description:this.description}).then(resp => {
+          alert('作业提交成功！')
+          location.href = '/bigdataExperiment/language'
+        this.$http.get('instances', {
+          headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          }
+        }).then(resp => {
+          this.instances = resp.body
+      })
+      }, () => {
+          alert('作业提交失败！')
+        })
       }
     },
     created() {
+      this.$http.get('homeworks', {
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      }).then(resp => {
+        this.homeworkList = resp.body
+        this.choosedHomework=this.homeworkList[0]
+      })
       document.oncontextmenu = function() {
         return false;
       }
