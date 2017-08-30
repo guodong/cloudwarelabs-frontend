@@ -4,7 +4,11 @@
     <common-header></common-header>
     <div id="fullpage">
       <div class="section active" id="section0">
-        <h2>&nbsp;&nbsp;&nbsp;&nbsp;数据源</h2>
+        <p>本系统的数据格式包括：结构化数据、半结构化数据和非结构化数据。
+          存储方式既包括数据库形式的数据，也包括文件形式的数据。
+        </p>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;数据的具体来源如下：</h2>
+
         <ul>
           <ul>
             <h3>1、政府数据（Government data)</h3>
