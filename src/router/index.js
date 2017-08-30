@@ -34,7 +34,7 @@ import Analysismining from '@/components/analysismining/Index.vue'
 import EdataPretreatment from '@/components/analysismining/dataPretreatment.vue'
 import Edatamining from '@/components/analysismining/datamining.vue'
 import Epythonda from '@/components/analysismining/pythonda.vue'
-
+import datasource from '@/components/datasource/index.vue'
 import Analysisbase from '@/components/analysisbase/Index.vue'
 import EHadoop from '@/components/analysisbase/Hadoop.vue'
 import EHDFS from '@/components/analysisbase/HDFS.vue'
@@ -75,7 +75,11 @@ var router = new Router({
   }, {
     path: '/login',
     component: Login
-  }, {
+  },{
+    path: '/datasource',
+    component: datasource
+  },
+    {
     path: '/register',
     component: Register
   }, {

@@ -22,7 +22,7 @@
             <router-link tag="li" to="/analysisbase"><a>大数据分析基础</a></router-link>
             <router-link tag="li" to="/biganalysismining"><a>大数据分析与挖掘</a></router-link>
             <router-link tag="li" to="/bigdataProject"><a>基于大数据的案例分析</a></router-link>
-            <router-link tag="li" to="/datasrc"><a>数据源及数据描述</a></router-link>
+            <router-link tag="li" to="/datasource"><a>数据源及数据描述</a></router-link>
             <router-link tag="li" to="/cloudwares"><a>练兵场</a></router-link>
 
             <!--<router-link tag="li" to="/management" v-if="user.role == 'admin'"><a>系统管理</a></router-link>-->
