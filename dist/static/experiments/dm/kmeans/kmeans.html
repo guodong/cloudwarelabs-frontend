@@ -8,7 +8,7 @@
 
   <script src="../../../js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-    /*function getCloudware() {
+    function getCloudware() {
       $.ajax({
         type: "GET",
         url: "http://api.cl.descloud.io/v1/cloudwares",
@@ -26,18 +26,20 @@
           alert(XMLHttpRequest.status);
         }
       });
-    }*/
+    }
     function run() {
+      var cid = $("#cloudwareID").val();
       var token = localStorage.getItem('token');
       $.ajax({
         type: "POST",
         url: "http://api.cl.descloud.io/v1/instances/",
-        data: {cloudware_id: "f27f91a5-963c-469f-a5db-3a1e236cfd43"},
+        data: {cloudware_id: cid},
         dataType: 'json',
         headers: {
           'Authorization': 'Bearer '+token,
         },
         success: function(data){
+          //alert("dataid:"+data.id);
           window.location.href='http://cl.descloud.io/instances/'+data.id+'/view';
         },
         error: function(XMLHttpRequest){
@@ -120,7 +122,7 @@
 
   </style>
 </head>
-<body>
+<body onload="getCloudware()">
   <div class="container-fluid">
   <div class="row row-common-style row-height text-center">
     <h1 class="color-black">k-means聚类</h1>
@@ -179,7 +181,7 @@
     <img class="img-responsive" src="img1.png">
 
 
-    <!--<input type="hidden" name="cloudwareID" id="cloudwareID">-->
+    <input type="hidden" name="cloudwareID" id="cloudwareID">
     <button class="btn btn-success btn-block" type="button" onclick="run()">运行实例</button>
 
   </div>
