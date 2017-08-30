@@ -5,6 +5,27 @@
   <title>python 线性回归示例</title>
   <link rel="stylesheet" href="../../../bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../../css/main.css">
+  <script src="../../../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    function run() {
+      var token = localStorage.getItem('token');
+      $.ajax({
+        type: "POST",
+        url: "http://api.cl.descloud.io/v1/instances/",
+        data: {cloudware_id: "c049c806-0278-4534-8ec6-4e1aeb1c9d08"},
+        dataType: 'json',
+        headers: {
+          'Authorization': 'Bearer '+token,
+        },
+        success: function(data){
+          window.location.href='http://cl.descloud.io/instances/'+data.id+'/view';
+        },
+        error: function(XMLHttpRequest){
+          alert(XMLHttpRequest.status);
+        }
+      });
+    }
+  </script>
   <style type="text/css">
     body{
       padding-top: 50px !important;
@@ -88,6 +109,24 @@
 <!--正文内容-->
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+    <div style="line-height: 25px;">
+      <h4>[实验目的]</h4>
+      <ui>
+        <li style="margin-left: 25px;">熟悉在python语言中的绘图操作。</li>
+        <li style="margin-left: 25px;">熟悉挖掘算法python线性回归的操作。</li>
+      </ui>
+      <h4>[实验原理]</h4>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python工具是一套完整的数据处理、计算和制图软件系统。其功能包括：数据存储和处理系统；数组运算工具（其向量、矩阵运算方面功能尤其强大）；完整连贯的统计分析工具；优秀的统计制图功能；简便而强大的编程语言：可操纵数据的输入和输出以及可实现分支、循环等用户自定义功能。
+      </p>
+      <h4>[实验步骤]</h4>
+      <ol>
+        <li>熟悉python环境；</li>
+        <li>打开python云件环境；</li>
+        <li>在相应编程环境中修改和运行代码；</li>
+        <li>查看结果。</li>
+      </ol>
+    </div>
     <!--<button class="btn-primary btn" style="float: right"><a href="../tool/r.html" target="_blank" style="text-decoration: none;color: white">在线实验</a></button>-->
     <br/>
     <br/>
@@ -194,6 +233,8 @@
       plt.show()
     </pre>
     <img class="img-responsive" src="img2.png">
+
+    <button class="btn btn-success btn-block" type="button" onclick="run()">运行实例</button>
 
   </div>
 </div>
