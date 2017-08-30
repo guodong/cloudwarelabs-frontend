@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Cloudwares from '@/components/cloudwares/Index.vue'
 import Instances from '@/components/instances/Index.vue'
+import introduction from '@/components/introduction/index.vue'
 import InstancesView from '@/components/instances/instance/View.vue'
 import Instance from '@/components/instances/instance/Index.vue'
 import Welcome from '@/components/Welcome.vue'
@@ -54,7 +55,11 @@ var router = new Router({
     path: '/instances',
     component: Instances,
     meta: { requiresAuth: true }
-  }, {
+  },{
+    path: '/introduction',
+    component: introduction,
+    meta: { requiresAuth: true }
+  },{
     path: '/instances/:id',
     component: Instance,
     meta: { requiresAuth: true },
@@ -184,7 +189,7 @@ var router = new Router({
   },]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next)   => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     // this route requires auth, check if logged in
     // if not, redirect to login page.

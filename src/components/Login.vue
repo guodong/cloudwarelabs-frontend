@@ -176,7 +176,7 @@
         this.$http.get('token?username=' + this.credentials.username + '&password=' + this.credentials.password).then(resp => {
           localStorage.setItem('token', resp.body.token)
           //this.$http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-          this.$router.push('/instances')
+          this.$router.push('/introduction')
         }, () => {
           alert('用户名或密码错误')
         })
