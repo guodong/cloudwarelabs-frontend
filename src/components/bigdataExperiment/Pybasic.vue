@@ -27,11 +27,11 @@
     data () {
       return {
         experiments: [
-          {title:"Python统计与建模",description:"基本编程",link:"/static/experiments/pythonmoding/pythonmodeling1.html"},
-          {title:"Python统计与建模",description:"基本编程",link:"/static/experiments/pythonmoding/pythonmodeling2.html"},
-          /*{title:"决策树分类实验",description:"决策树",link:"/static/experiments/bdm/dt/dt.html"},
-          {title:"随机森林分类实验",description:"随机森林",link:"/static/experiments/bdm/rf/rf.html"},
-          {title:"支持向量机分类实验",description:"svm",link:"/static/experiments/bdm/svm/svm.html"},*/
+          {title:"Python语言编程基础",description:"编程基础",link:"/static/experiments/Pybasic/pythonlanguagebase1.html"},
+          {title:"Python语言编程基础",description:"基本编程",link:"/static/experiments/Pybasic/pythonlanguagebase2.html"},
+          {title:"Python语言编程基础",description:"基本概念",link:"/static/experiments/Pybasic/pythonlanguagebase3.html"},
+          {title:"Python语言编程基础",description:"运算符与表达式",link:"/static/experiments/Pybasic/pythonlanguagebase4.html"},
+          {title:"Python语言编程基础",description:"运算符与表达式",link:"/static/experiments/Pybasic/pythonlanguagebase5.html"},
         ]
       }
     },

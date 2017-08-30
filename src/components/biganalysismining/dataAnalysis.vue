@@ -27,12 +27,12 @@
     data () {
       return {
         experiments: [
-          {title:"R语言支持向量机分类实验",description:"支持向量机分类",link:"/static/amExperiments/dataPretreatment/R_dqa/R_dqa.html"},
-          {title:"Python支持向量机分类实验",description:"支持向量机分类",link:"/static/amExperiments/dataPretreatment/svm/svm.html"},
-          {title:"R语言决策树分类实验",description:"决策树分类",link:"/static/amExperiments/dataPretreatment/R_dfa/R_dfa.html"},
-          {title:"Python决策树分类实验",description:"决策树分类",link:"/static/amExperiments/dataPretreatment/svm/svm.html"},
-          {title:"R语言随机森林分类实验",description:"随机森林分类",link:"/static/amExperiments/dataPretreatment/R_scf/R_scf.html"},
-          {title:"Python随机森林分类实验",description:"随机森林分类",link:"/static/amExperiments/dataPretreatment/svm/svm.html"},
+          {title:"R语言支持向量机分类实验",description:"支持向量机分类",link:"/static/amExperiments/bdm/svm/svm.html"},
+          {title:"Python支持向量机分类实验",description:"支持向量机分类",link:"/static/amExperiments/bdm/svm/svm.html"},
+          {title:"R语言决策树分类实验",description:"决策树分类",link:"/static/amExperiments/bdm/dt/dt.html"},
+          {title:"Python决策树分类实验",description:"决策树分类",link:"/static/amExperiments/bdm/dt/dt.html"},
+          {title:"R语言随机森林分类实验",description:"随机森林分类",link:"/static/amExperiments/bdm/rf/rf.html"},
+          {title:"Python随机森林分类实验",description:"随机森林分类",link:"/static/amExperiments/bdm/rf/rf.html"},
         ]
       }
     },

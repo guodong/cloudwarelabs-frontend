@@ -10,7 +10,8 @@
           <div class="list-group">
             <router-link to="/bigdataexperiment/language" class="list-group-item">R语言编程基础</router-link>
             <router-link to="/bigdataexperiment/dm" class="list-group-item">R语言统计与建模</router-link>
-            <router-link to="/bigdataexperiment/bigdatae" class="list-group-item">Python语言编程基础</router-link>
+            <!--<router-link to="/bigdataexperiment/bigdatae" class="list-group-item">Python语言编程基础</router-link>-->
+            <router-link to="/bigdataexperiment/Pybasic" class="list-group-item">Python语言编程基础</router-link>
             <router-link to="/bigdataexperiment/bdm" class="list-group-item">Python语言统计与建模</router-link>
           </div>
         </div>

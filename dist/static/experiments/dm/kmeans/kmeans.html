@@ -47,6 +47,26 @@
         }
       });
     }
+    function doHomework() {
+      var cid = $("#cloudwareID").val();
+      var token = localStorage.getItem('token');
+      $.ajax({
+        type: "POST",
+        url: "http://api.cl.descloud.io/v1/instances/",
+        data: {cloudware_id: cid},
+        dataType: 'json',
+        headers: {
+          'Authorization': 'Bearer '+token,
+        },
+        success: function(data){
+          //alert("dataid:"+data.id);
+          window.location.href='http://cl.descloud.io/instances/'+data.id+'/view';
+        },
+        error: function(XMLHttpRequest){
+          alert(XMLHttpRequest.status);
+        }
+      });
+    }
   </script>
 
   <style type="text/css">
@@ -182,7 +202,8 @@
 
 
     <input type="hidden" name="cloudwareID" id="cloudwareID">
-    <button class="btn btn-success btn-block" type="button" onclick="run()">运行实例</button>
+    <button class="btn btn-success btn-block" style="width: 400px;float: left;" type="button" onclick="run()">运行实例</button>
+    <button class="btn btn-success btn-block" style="width: 400px;float: right;margin-top: 0px;" type="button" onclick="doHomework()">开始作业</button>
 
   </div>
 </div>

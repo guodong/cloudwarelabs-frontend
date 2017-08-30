@@ -28,6 +28,7 @@ import Elanguage from '@/components/bigdataExperiment/language.vue'
 import Ebdm from '@/components/bigdataExperiment/bdm.vue'
 import EbigdataE from '@/components/bigdataExperiment/bigdataE.vue'
 import Edm from '@/components/bigdataExperiment/dm.vue'
+import EPybasic from '@/components/bigdataExperiment/Pybasic.vue'
 import BigdataProject from '@/components/bigdataProject/Index.vue'
 
 import Analysismining from '@/components/analysismining/Index.vue'
@@ -147,6 +148,9 @@ var router = new Router({
     },{
       path: 'bigdatae',
       component: EbigdataE
+    },{
+      path: 'Pybasic',
+      component: EPybasic
     }]
   },{
     path: '/analysismining',
