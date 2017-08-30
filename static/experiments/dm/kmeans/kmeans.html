@@ -33,7 +33,7 @@
       $.ajax({
         type: "POST",
         url: "http://api.cl.descloud.io/v1/instances/",
-        data: {cloudware_id: cid},
+        data: {cloudware_id: cid, file: 'https://raw.githubusercontent.com/guodong/algos/master/kmeans.r'},
         dataType: 'json',
         headers: {
           'Authorization': 'Bearer '+token,
