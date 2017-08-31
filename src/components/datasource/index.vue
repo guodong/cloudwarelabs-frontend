@@ -4,12 +4,12 @@
     <common-header></common-header>
     <div id="fullpage">
       <div class="section active" id="section0">
-        <p>本系统的数据格式包括：结构化数据、半结构化数据和非结构化数据。
+        <p style="padding-left: 70px">本系统的数据格式包括：结构化数据、半结构化数据和非结构化数据。
           存储方式既包括数据库形式的数据，也包括文件形式的数据。
         </p>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;数据的具体来源如下：</h2>
 
-        <ul>
+        <ul class="datasource">
           <!--<ul>
             <h3>1、政府数据（Government data)</h3>
             <li><a href="http://data.un.org/">UNdata（联合国数据库）：联合国统计司（The United Nations Statistics Division）为全球用户启动了的互联网数据服务。供用户搜索和下载联合国系统的各种统计资源。</a> </li>
@@ -65,15 +65,43 @@
             <li><a href="https://grouplens.org/datasets/movielens/">Grouplens：从MovieLens网站收集并提供了评级数据集。</a> </li>
           </ul>-->
           <ul>
-            <h3>1、科学研究(Science Rearch)</h3>
+            <h3>1、实验案例(Science Rearch)</h3>
+            <li><h4>百货商店销售数据集</h4>
+              <p>该数据集是某个百货商店一个月真实的交易记录，共有9835条消费记录，169个商品。适合进行Apriori、FP Growth、eclat算法进行关联分析或关联规则推荐建模分析。
+              信用卡用户画像数据源
+              信用卡的用户消费记录，可以通过用户的消费记录对用户的喜好进行分析，形成用户画像。
+              </p>
+            </li>
+            <li><h4>商圈刷卡记录数据源</h4>
+              刷卡记录数据，包括两张表：emporium 中储存的是商场信息。id 表示商场的编号， gpslongitude 表示商场的地理经度，gpslatitude表示商场的地理纬度。ggmap1中储存的是上海的地图。地图数据可以通过·ggmap::qmap(‘shanghai’)·得到。</li>
+            <li>
+              <h4>Iris鸢尾花数据集</h4>
+
+Iris数据集是常用的分类实验数据集，由Fisher, 1936收集整理。Iris也称鸢尾花卉数据集，是一类多重变量分析的数据集。数据集包含150个数据集，分为3类，每类50个数据，每个数据包含4个属性。可通过花萼长度，花萼宽度，花瓣长度，花瓣宽度4个属性预测鸢尾花卉属于（Setosa，Versicolour，Virginica）三个种类中的哪一类。该数据集由3种不同类型的鸢尾花的50个样本数据构成。其中的一个种类与另外两个种类是线性可分离的，后两个种类是非线性可分离的。
+该数据集包含了5个属性：<br>
+& Sepal.Length（花萼长度），单位是cm;<br>
+& Sepal.Width（花萼宽度），单位是cm;<br>
+& Petal.Length（花瓣长度），单位是cm;<br>
+& Petal.Width（花瓣宽度），单位是cm;<br>
+& 种类：Iris Setosa（山鸢尾）、Iris Versicolour（杂色鸢尾），以及Iris Virginica（维吉尼亚鸢尾）。
+
+            </li>
+            <li>
+              <h4>泰坦尼克号生还者数据集</h4>
+              泰坦尼克号生还者记录的数据集，可以进行预测算法分析，数据集一共有12个字段。PassengerId => 乘客ID ，Survived s =>是否生还，Pclass => 乘客等级(1/2/3等舱位)，Name => 乘客姓名，Sex => 性别 ，Age => 年龄 ，SibSp => 堂兄弟/妹个数，Parch => 父母与小孩个数 ，Ticket => 船票信息，Fare => 票价，Cabin => 客舱，Embarked => 登船港口。
+
+            </li>
+          </ul>
+          <ul>
+            <h3>2、科学研究(Science Rearch)</h3>
             <li><a href="http://webscope.sandbox.yahoo.com/catalog.php?datatype=l" target="_blank">Language Data：Yahoo语言数据集</a> </li>
             <li><a href="http://data.worldbank.org/" target="_blank">世界银行TCdata360的大数据平台：TCdata360平台整合并视觉化呈现20多个来源的公开数据</a> </li>
             <li><a href="http://www.ncmi.cn/1" target="_blank">国家人口与健康科学数据共享平台</a> </li>
             <li><a href="https://data.nasa.gov/" target="_blank">NASA开放数据源</a> </li>
-            <li><a href=""></a> </li>
+
           </ul>
           <ul>
-            <h3>2、竞赛数据(Competition Data)</h3>
+            <h3>3、竞赛数据(Competition Data)</h3>
             <li><a href="https://www.kaggle.com/" target="_blank">Kaggle竞赛平台</a> </li>
             <li><a href="http://www.kdd.org/kdd-cup" target="_blank">KDD Cups</a> </li>
             <li><a href="https://www.drivendata.org/">Driven Data</a> </li>
@@ -115,3 +143,11 @@
     components: {CommonFooter,CommonHeader}
   }
 </script>
+<style>
+  .datasource {
+    font-size: 14px;
+  }
+  .datasource h4 {
+    margin: 30px 0;
+  }
+</style>

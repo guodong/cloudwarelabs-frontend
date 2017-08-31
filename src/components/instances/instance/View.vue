@@ -83,7 +83,7 @@
         this.currentInstance=instance;
       },
       submit(instance){
-        this.$http.post('submissions',{homework_id:this.choosedHomework.id, instance_id: instance.id, description:this.description}).then(resp => {
+        this.$http.post('submissions',{homework_id:this.choosedHomework.id, instance_id: instance.id, description:this.description?this.description:' '}).then(resp => {
           alert('作业提交成功！')
           location.href = '/bigdataExperiment/language'
         this.$http.get('instances', {
