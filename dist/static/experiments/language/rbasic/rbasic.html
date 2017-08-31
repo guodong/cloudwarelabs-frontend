@@ -28,6 +28,8 @@
     }
     function run() {
       var cid = $("#cloudwareID").val();
+      //var cid='2298ca92-d539-4519-9788-1d6ab9c5c9b3';
+      //console.log(cid);
       var token = localStorage.getItem('token');
       $.ajax({
         type: "POST",
@@ -38,7 +40,8 @@
           'Authorization': 'Bearer '+token,
         },
         success: function(data){
-          window.location.href='http://cl.descloud.io/instances/'+data.id+'/view';
+          window.location.href='http://cl.descloud.io/instances/ff6d2bbe-d030-40b0-bbd4-aaa6f9418868/view';
+          //window.location.href='http://cl.descloud.io/instances/ac530fb7-dddd-4cb6-9779-89e81ea94247/view';
         },
         error: function(XMLHttpRequest){
           alert(XMLHttpRequest.status);
