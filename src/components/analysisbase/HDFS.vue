@@ -27,8 +27,8 @@
     data () {
       return {
         experiments: [
-          {title:"HDFS基本操作实验",description:"HDFS",link:"/static/amExperiments/dataPretreatment/R_dqa/R_dqa.html"},
-          {title:"MapReduce基础实验",description:"MapReduce基础",link:"/static/amExperiments/dataPretreatment/svm/svm.html"},
+          {title:"HDFS基本操作实验",description:"HDFS",link:"/static/amExperiments/bigdataE/hadoop/hadoop.html"},
+          {title:"MapReduce基础实验",description:"MapReduce基础",link:"/static/amExperiments/bigdataE/mapreduce/wordcount.html"},
           {title:"MapReduce高级特性实验",description:"MapReduce高级特性",link:"/static/amExperiments/dataPretreatment/R_dfa/R_dfa.html"},
           {title:"迭代式MapReduce程序开发实验",description:"迭代式MapReduce",link:"/static/amExperiments/dataPretreatment/svm/svm.html"},
           {title:"Hive基本操作实验",description:"Hive",link:"/static/amExperiments/dataPretreatment/R_scf/R_scf.html"},
