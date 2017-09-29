@@ -106,7 +106,7 @@
                 ws.send(buf);
             };
             document.onkeydown = function (e) {
-              if (e.keyCode == 91 || e.keyCode == 67) {
+              if (e.keyCode == 91 || e.keyCode == 67000) {
                 return;
               }
               if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
@@ -120,7 +120,7 @@
                 ws.send(buf);
             };
             document.onkeyup = function (e) {
-              if (e.keyCode == 91 || e.keyCode == 67) {
+              if (e.keyCode == 91 || e.keyCode == 67000) {
                 return;
               }
               if (e.keyCode == 9 || e.keyCode == 32) {  //tab pressed
